@@ -12,6 +12,7 @@ class Admin extends CI_Controller {
 		$this->load->model('muser','mus');
 		$this->load->model('msubject','msub');
 		$this->load->model('mclass');
+		$this->load->model('msetting');
 
 
 	}
@@ -271,6 +272,26 @@ class Admin extends CI_Controller {
 		    redirect(base_url($this->uri->segment(1).'/manage_class'));
 		  }
 
+			function edit_setting(){
+				$data['title_web'] = 'Edit setting | Adminpanel Strada';
+				$data['path_content'] = 'admin/setting/edit_setting';
+				$data['result']=$this->mod->getDataWhere('setting','id_setting',1);
+				if($data['result']==FALSE)
+				redirect(base_url('setting/manage_setting'));
+
+					$this->form_validation->set_rules('title_web','Title','required');
+					$this->form_validation->set_rules('downloadable_date','Date','required');
+
+
+
+					if(!$this->form_validation->run()){
+          $this->load->view('admin/index',$data);
+        }
+        else{
+          $save = $this->mse->editSetting($_POST,$id);
+          redirect(base_url($this->uri->segment(1).'/setting/manage_setting'));
+        }
+			}
 
 
 
