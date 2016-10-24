@@ -1,22 +1,3 @@
-<!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html>
-<head>
-
-  <!-- Tell the browser to be responsive to screen width -->
-
-  <link rel="stylesheet" href="<?php echo base_url('asset/asset_default/plugins/datepicker/datepicker3.css')?>">
-  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-        page. However, you can choose any other skin. Make sure you
-        apply the skin class to the body tag so the changes take effect.
-  -->
-
-</head>
-
-<body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -45,7 +26,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <i class="fa fa-arrow-left fa-fw" aria-hidden="true"></i>Back to Dashboard
       </a>
       <form class="" method="post">
-        <?php echo validation_errors()?>  
+        <?php echo validation_errors()?>
         <div class="form-group">
         <div class="row">
           <div class="col-md-3 col-sm-3 col-xs-3 text-right">
@@ -67,11 +48,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" class="form-control pull-right" id="datepicker">
+                  <input type="text" class="form-control pull-right" id="datepicker"  name="downloadable_date" value="<?php echo date('d M Y',strtotime($result['downloadable_date']))?>">
                 </div>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" style="margin-top:10px" href="#" role="button" name="downloadable_date" value="<?php echo $result['downloadable_date']?>">
+            <button class="btn btn-sm vcd-btn-primary btn-rd" style="margin-top:10px" href="#" role="button">
               Save
-            </a>
+            </button>
           </div>
           <div class="col-md-3 col-sm-3 hidden-xs"></div>
         </div>
@@ -129,20 +110,3 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
-
-<!-- REQUIRED JS SCRIPTS -->
-
-<!-- jQuery 2.2.3 -->
-
-<script src="<?php echo base_url('asset/asset_default/plugins/datepicker/bootstrap-datepicker.js')?>"></script>
-<script>
-$('#datepicker').datepicker({
-      autoclose: true
-    });
-</script>
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. Slimscroll is required when using the
-     fixed layout. -->
-</body>
-</html>

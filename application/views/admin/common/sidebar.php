@@ -7,30 +7,22 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel">
       <div class="pull-left image">
-        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        <img src="<?php echo base_url('asset/asset_default/dist/img/user2-160x160.jpg')?>" class="img-circle" alt="User Image">
       </div>
       <div class="pull-left info">
-        <p>Alexander Pierce</p>
+        <p><?php echo $this->session->userdata('username');?></p>
         <!-- Status -->
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+
       </div>
     </div>
 
     <!-- search form (Optional) -->
-    <form action="#" method="get" class="sidebar-form">
-      <div class="input-group">
-        <input type="text" name="q" class="form-control" placeholder="Search...">
-            <span class="input-group-btn">
-              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-              </button>
-            </span>
-      </div>
-    </form>
+
     <!-- /.search form -->
 
     <!-- Sidebar Menu -->
     <ul class="sidebar-menu">
-      <li class="header">HEADER</li>
+      <li class="header"></li>
       <!-- Optionally, you can add icons to the links -->
       <li class="active"><a href=""><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
       <li class="treeview">
@@ -73,8 +65,9 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-plus"> Add Schedule</i></a></li>
-          <li><a href="#"><i class="fa fa-cog"> Manage Schedule</i></a></li>
+          <li><a href="<?php echo base_url($this->uri->segment(1).'/add-schedule')?>"><i class="fa fa-plus"> Add Schedule</i></a></li>
+          <li><a href="<?php echo base_url($this->uri->segment(1).'/manage-schedule')?>"><i class="fa fa-cog"> Manage Schedule</i></a></li>
+            <li><a href="<?php echo base_url($this->uri->segment(1).'/manage-schedule-grid')?>"><i class="fa fa-cog"> Manage Schedule Grid</i></a></li>
         </ul>
       </li>
       <li><a href="<?php echo base_url($this->uri->segment(1).'/edit_setting')?>"><i class="fa fa-cogs"></i> <span>Setting</span></a></li>

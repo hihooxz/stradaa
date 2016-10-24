@@ -25,10 +25,10 @@ class Msetting extends CI_Model {
     return $this->db->count_all("setting");
   }
 
-	function edit_setting($data,$id=1){
+	function editSetting($data,$id){
 		$array = array(
 				'title_website' => $data['title_website'],
-				'downloadable_date' => $data['downloadable_date']
+				'downloadable_date' => date('Y-m-d',strtotime($data['downloadable_date']))
 			);
 
 

@@ -189,14 +189,14 @@ class Admin extends CI_Controller {
 		    }
 		    else{
 		      $save = $this->msub->editSubject($_POST,$id);
-		      redirect(base_url($this->uri->segment(1).'/manage_subject'));
+		      redirect(base_url($this->uri->segment(1).'/manage-subject'));
 		    }
 		  }
 		  function delete_subject(){
 		    $id = $this->uri->segment(3);
 		    $this->db->where('id_subject',$id);
 		    $this->db->delete('subject');
-		    redirect(base_url($this->uri->segment(1).'/manage_subject'));
+		    redirect(base_url($this->uri->segment(1).'/manage-subject'));
 		  }
 
 			function manage_class(){
@@ -209,7 +209,7 @@ class Admin extends CI_Controller {
 			  // Ngeload data
 			  $perpage = 10;
 			  $this->load->library('pagination'); // load libraray pagination
-			  $config['base_url'] = base_url($this->uri->segment(1).'/manage_class/'); // configurate link pagination
+			  $config['base_url'] = base_url($this->uri->segment(1).'/manage-class/'); // configurate link pagination
 			  $config['total_rows'] = $this->mod->countData('class');// fetch total record in databae using load
 			  $config['per_page'] = $perpage; // Total data in one page
 			  $config['uri_segment'] = 3; // catch uri segment where locate in 4th posisition
@@ -241,7 +241,7 @@ class Admin extends CI_Controller {
 		    }
 		    else{
 		      $save = $this->mclass->saveClass($_POST);
-		      redirect(base_url($this->uri->segment(1).'/manage_class'));
+		      redirect(base_url($this->uri->segment(1).'/manage-class'));
 		    }
 		  }
 
@@ -262,14 +262,14 @@ class Admin extends CI_Controller {
 		    }
 		    else{
 		      $save = $this->mclass->editClass($_POST,$id);
-		      redirect(base_url($this->uri->segment(1).'/manage_class'));
+		      redirect(base_url($this->uri->segment(1).'/manage-class'));
 		    }
 		  }
 		  function delete_class(){
 		    $id = $this->uri->segment(3);
 		    $this->db->where('id_class',$id);
 		    $this->db->delete('class');
-		    redirect(base_url($this->uri->segment(1).'/manage_class'));
+		    redirect(base_url($this->uri->segment(1).'/manage-class'));
 		  }
 
 			function edit_setting(){
@@ -279,19 +279,32 @@ class Admin extends CI_Controller {
 				if($data['result']==FALSE)
 				redirect(base_url('setting/manage_setting'));
 
-					$this->form_validation->set_rules('title_web','Title','required');
+					$this->form_validation->set_rules('title_website','Title','required');
 					$this->form_validation->set_rules('downloadable_date','Date','required');
-
-
 
 					if(!$this->form_validation->run()){
           $this->load->view('admin/index',$data);
         }
         else{
-          $save = $this->mse->editSetting($_POST,$id);
-          redirect(base_url($this->uri->segment(1).'/setting/manage_setting'));
+          $save = $this->msetting->editSetting($_POST,1);
+          redirect(base_url($this->uri->segment(1).'/edit-setting'));
         }
 			}
+
+			function manage_schedule(){
+				$data['title_web']= 'adminpanel | Stradaa';
+				$data['path_content'] = 'admin/schedule/manage_schedule';
+
+				$this->load->view('admin/index',$data);
+			}
+
+			function manage_schedule_grid(){
+				$data['title_web']= 'adminpanel | Stradaa';
+				$data['path_content'] = 'admin/schedule/manage_schedule_grid';
+
+				$this->load->view('admin/index',$data);
+			}
+
 
 
 
