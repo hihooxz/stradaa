@@ -36,9 +36,11 @@
       <thead>
         <tr>
           <th>No.</th>
+          <th>Name Schedule</th>
           <th>Date</th>
           <th>Hour Start</th>
           <th>Hour End</th>
+          <th>Classroom</th>
           <th>Class</th>
           <th>Subject</th>
           <th>Pengawas 1</th>
@@ -47,186 +49,43 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>21/10/2016</td>
-          <td>9.30 AM</td>
-          <td>11.00 AM</td>
-          <td>XII-IPA 2</td>
-          <td>Biologi</td>
-          <td>Zarkasih</td>
-          <td>M. Ari</td>
+        <?php
+          $i=1;
+          if($results!=FALSE){
+            foreach ($results as $rows) {
+
+              ?>
+              <tr>
+                <td><?php echo $i ?></td>
+                <td><?php echo $rows->name_schedule?></td>
+                <td><?php echo date('D, d M Y',strtotime($rows->date_schedule)) ?></td>
+                <td><?php echo date('H:i',strtotime($rows->hour_start)) ?></td>
+                <td><?php echo date('H:i',strtotime($rows->hour_end)) ?></td>
+                <td><?php echo $rows->name_classroom?></td>
+                <td><?php echo $rows->class_name?></td>
+                <td><?php echo $rows->subject?></td>
+                <td><?php ?></td>
+                <td><?php ?></td>
           <td>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="#" role="button">
+            <a class="btn btn-sm vcd-btn-primary btn-rd" href="<?php echo base_url($this->uri->segment(1).'/edit-schedule/'.$rows->id_schedule)?>" role="button">
               <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
             </a>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="#" role="button">
+            <a class="btn btn-sm vcd-btn-primary btn-rd" href="<?php echo base_url($this->uri->segment(1).'/delete-schedule/'.$rows->id_schedule)?>" role="button">
               <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
             </a>
           </td>
         </tr>
-        <tr>
-          <td>2</td>
-          <td>21/10/2016</td>
-          <td>9.30 AM</td>
-          <td>11.00 AM</td>
-          <td>XII-IPA 2</td>
-          <td>Biologi</td>
-          <td>Zarkasih</td>
-          <td>M. Ari</td>
-          <td>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="#" role="button">
-              <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
-            </a>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="#" role="button">
-              <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>21/10/2016</td>
-          <td>9.30 AM</td>
-          <td>11.00 AM</td>
-          <td>XII-IPA 2</td>
-          <td>Biologi</td>
-          <td>Zarkasih</td>
-          <td>M. Ari</td>
-          <td>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="#" role="button">
-              <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
-            </a>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="#" role="button">
-              <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>21/10/2016</td>
-          <td>9.30 AM</td>
-          <td>11.00 AM</td>
-          <td>XII-IPA 2</td>
-          <td>Biologi</td>
-          <td>Zarkasih</td>
-          <td>M. Ari</td>
-          <td>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="#" role="button">
-              <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
-            </a>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="#" role="button">
-              <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>21/10/2016</td>
-          <td>9.30 AM</td>
-          <td>11.00 AM</td>
-          <td>XII-IPA 2</td>
-          <td>Biologi</td>
-          <td>Zarkasih</td>
-          <td>M. Ari</td>
-          <td>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="#" role="button">
-              <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
-            </a>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="#" role="button">
-              <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>21/10/2016</td>
-          <td>9.30 AM</td>
-          <td>11.00 AM</td>
-          <td>XII-IPA 2</td>
-          <td>Biologi</td>
-          <td>Zarkasih</td>
-          <td>M. Ari</td>
-          <td>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="#" role="button">
-              <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
-            </a>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="#" role="button">
-              <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>7</td>
-          <td>21/10/2016</td>
-          <td>9.30 AM</td>
-          <td>11.00 AM</td>
-          <td>XII-IPA 2</td>
-          <td>Biologi</td>
-          <td>Zarkasih</td>
-          <td>M. Ari</td>
-          <td>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="#" role="button">
-              <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
-            </a>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="#" role="button">
-              <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>8</td>
-          <td>21/10/2016</td>
-          <td>9.30 AM</td>
-          <td>11.00 AM</td>
-          <td>XII-IPA 2</td>
-          <td>Biologi</td>
-          <td>Zarkasih</td>
-          <td>M. Ari</td>
-          <td>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="#" role="button">
-              <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
-            </a>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="#" role="button">
-              <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>9</td>
-          <td>21/10/2016</td>
-          <td>9.30 AM</td>
-          <td>11.00 AM</td>
-          <td>XII-IPA 2</td>
-          <td>Biologi</td>
-          <td>Zarkasih</td>
-          <td>M. Ari</td>
-          <td>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="#" role="button">
-              <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
-            </a>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="#" role="button">
-              <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>10</td>
-          <td>21/10/2016</td>
-          <td>9.30 AM</td>
-          <td>11.00 AM</td>
-          <td>XII-IPA 2</td>
-          <td>Biologi</td>
-          <td>Zarkasih</td>
-          <td>M. Ari</td>
-          <td>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="#" role="button">
-              <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
-            </a>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="#" role="button">
-              <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
-            </a>
-          </td>
-        </tr>
+        <?php
+        $i++;
+        }
+
+      }
+        ?>
+          <?php
+            echo $links;
+            ?>
+
+      </tbody>
       </tfoot>
 
       </table>

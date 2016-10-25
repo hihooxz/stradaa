@@ -27,7 +27,8 @@ class Mclass extends CI_Model {
 
   function saveClass($data){
     $array = array(
-        'class_name' => $data['class_name']
+        'class_name' => $data['class_name'],
+				'status_class' => $data['status_class']
 
       );
     $this->db->insert('class',$array);
@@ -35,7 +36,8 @@ class Mclass extends CI_Model {
   }
     function editClass($data,$id){
       $array = array(
-          'class_name' => $data['class_name']
+          'class_name' => $data['class_name'],
+					'status_class' => $data['status_class']
 
         );
 
@@ -52,4 +54,52 @@ class Mclass extends CI_Model {
 	    }
 	    else return FALSE;
 		}
+
+		function fetchClassroom($limit,$start,$pagenumber) {
+
+	    if($pagenumber!="")
+	      $this->db->limit($limit,($pagenumber*$limit)-$limit);
+	    else
+	      $this->db->limit($limit,$start);
+
+	    $this->db->order_by('name_classroom','ASC');
+	    $query = $this->db->get('classroom');
+	    if($query->num_rows()>0){
+	      return $query->result();
+	    }
+	    else return FALSE;
+	  }
+	  function countAllClassroom() {
+	    return $this->db->count_all("classroom");
+	  }
+
+	  function saveClassroom($data){
+	    $array = array(
+	        'name_classroom' => $data['name_classroom']
+
+
+	      );
+	    $this->db->insert('classroom',$array);
+	    return 1;
+	  }
+	    function editClassroom($data,$id){
+	      $array = array(
+	          'name_classroom' => $data['name_classroom']
+
+
+	        );
+
+	      $this->db->where('id_classroom',$id);
+	      $this->db->update('classroom',$array);
+	      return 1;
+	    }
+			function fetchClassroomSearch($data) {
+				$this->db->like($data['by'],$data['search']);
+				$this->db->order_by('name_classroom','ASC');
+		    $query = $this->db->get('classroom');
+		    if($query->num_rows()>0){
+		      return $query->result();
+		    }
+		    else return FALSE;
+			}
 }

@@ -38,27 +38,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </a>
       <form class="" method="post">
         <?php echo validation_errors()?>
-        <div class="form-group">
-          <div class="row">
-            <div class="col-md-3 col-sm-3 col-xs-3 text-right">
-              <label class="control-label">Status Class</label>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-9">
-              <select id="heard" class="form-control" name="status_class" value="<?php echo set_value('status_class')?>">
-                <option value="0">Active</option>
-                <option value="1">Non Active</option>
-              </select>
-            </div>
-            <div class="col-md-3 col-sm-3 hidden-xs"></div>
-          </div>
-        </div>
+
       <div class="form-group">
         <div class="row">
           <div class="col-md-3 col-sm-3 col-xs-3 text-right">
-            <label class="control-label">Class Name</label>
+            <label class="control-label">Classroom Name</label>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-9">
-            <input type="text" class="form-control col-md-7 col-xs-12" name="class_name">
+            <input type="text" class="form-control col-md-7 col-xs-12" name="name_classroom">
             <button class="btn btn-sm vcd-btn-primary btn-rd" style="margin-top:10px" href="#" role="button">
               Save
             </button>

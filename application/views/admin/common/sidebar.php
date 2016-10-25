@@ -56,6 +56,8 @@
         <ul class="treeview-menu">
           <li><a href="<?php echo base_url($this->uri->segment(1).'/add-class')?>"><i class="fa fa-plus"> Add Class</i></a></li>
           <li><a href="<?php echo base_url($this->uri->segment(1).'/manage-class')?>"><i class="fa fa-cog"> Manage Class</i></a></li>
+          <li><a href="<?php echo base_url($this->uri->segment(1).'/add-classroom')?>"><i class="fa fa-plus"> Add Classroom</i></a></li>
+          <li><a href="<?php echo base_url($this->uri->segment(1).'/manage-classroom')?>"><i class="fa fa-cog"> Manage Classroom</i></a></li>
         </ul>
       </li>
       <li class="treeview">

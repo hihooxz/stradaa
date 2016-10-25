@@ -17,11 +17,11 @@
       <a class="hiddenanchor" id="signup"></a>
       <a class="hiddenanchor" id="signin"></a>
 
-      <div class="login_wrapper" style="margin-top:0px">
+			<div class="login_wrapper" style="margin-top:0px">
         <div class="animate form login_form">
           <section class="login_content">
             <form  action="" method="POST">
-            <img src="<?php echo base_url('asset/asset_default/images/logo.jpg?')?>" class="img-responsive" alt="Strada" width="419px" height="60px" style="margin-bottom:50px;">
+            <img src="<?php echo base_url('asset/asset_default/images/logo.jpg')?>" class="img-responsive" alt="Strada" style="margin-bottom:50px;">
               <div class="clearfix">
                               </div>
               <div>

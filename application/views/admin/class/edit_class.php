@@ -2,14 +2,7 @@
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html>
-<head>
 
-</head>
-
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
 
   <!-- Main Header -->
 
@@ -38,6 +31,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </a>
       <form class="" method="post">
         <?php echo validation_errors()?>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+              <label class="control-label">Status Class</label>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-9">
+              <?php
+                $options = array(
+                  '0' => 'Active',
+                  '1' => 'Non Active'
+                );
+                echo form_dropdown('status_class',$options,$result['id_class'],"class='form-control'");
+               ?>
+            </div>
+            <div class="col-md-3 col-sm-3 hidden-xs"></div>
+          </div>
+        </div>
       <div class="form-group">
         <div class="row">
           <div class="col-md-3 col-sm-3 col-xs-3 text-right">
@@ -55,18 +65,4 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 
-          <div class="col-md-3 col-sm-3 hidden-xs"></div>
-        </div>
-      </div>
-      </form>
-      </div>
-      </div>
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-
-  <!-- Main Footer -->
-
-</body>
-</html>
+          

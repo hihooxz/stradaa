@@ -1,15 +1,9 @@
-<!DOCTYPE html>
+n<!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html>
-<head>
 
-</head>
-
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
 
   <!-- Main Header -->
 
@@ -50,8 +44,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <thead>
         <tr>
           <th>No.</th>
-          <th>Class Name</th>
-          <th>Status Class</th>
+          <th>Classroo Name</th>
+
           <th>Action</th>
         </tr>
       </thead>
@@ -64,13 +58,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
               ?>
               <tr>
                 <td><?php echo $i ?></td>
-                <td><?php echo $rows->class_name ?></td>
-                <td><?php if($rows->status_class == 0) echo "Active"; else echo "Non Active"; ?></td>
+                <td><?php echo $rows->name_classroom ?></td>
+
           <td>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="<?php echo base_url($this->uri->segment(1).'/edit-class/'.$rows->id_class)?>" role="button">
+            <a class="btn btn-sm vcd-btn-primary btn-rd" href="<?php echo base_url($this->uri->segment(1).'/edit-classroom/'.$rows->id_classroom)?>" role="button">
               <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
             </a>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="<?php echo base_url($this->uri->segment(1).'/delete-class/'.$rows->id_class)?>" role="button">
+            <a class="btn btn-sm vcd-btn-primary btn-rd" href="<?php echo base_url($this->uri->segment(1).'/delete-classroom/'.$rows->id_classroom)?>" role="button">
               <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
             </a>
           </td>
@@ -102,7 +96,3 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
-
-</body>
-</html>

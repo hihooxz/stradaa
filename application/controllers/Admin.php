@@ -13,6 +13,7 @@ class Admin extends CI_Controller {
 		$this->load->model('msubject','msub');
 		$this->load->model('mclass');
 		$this->load->model('msetting');
+		$this->load->model('mschedule');
 
 
 	}
@@ -234,6 +235,7 @@ class Admin extends CI_Controller {
 		    $data['title_web'] = 'Add subject | Adminpanel Strada';
 		    $data['path_content'] = 'admin/class/add_class';
 		    $this->form_validation->set_rules('class_name','class','required');
+				$this->form_validation->set_rules('status_class','Status','required');
 
 
 		    if(!$this->form_validation->run()){
@@ -254,6 +256,7 @@ class Admin extends CI_Controller {
 		      redirect(base_url('class/manage_class'));
 
 					$this->form_validation->set_rules('class_name','class','required');
+					$this->form_validation->set_rules('status_class','Status','required');
 
 
 
@@ -276,8 +279,7 @@ class Admin extends CI_Controller {
 				$data['title_web'] = 'Edit setting | Adminpanel Strada';
 				$data['path_content'] = 'admin/setting/edit_setting';
 				$data['result']=$this->mod->getDataWhere('setting','id_setting',1);
-				if($data['result']==FALSE)
-				redirect(base_url('setting/manage_setting'));
+
 
 					$this->form_validation->set_rules('title_website','Title','required');
 					$this->form_validation->set_rules('downloadable_date','Date','required');
@@ -294,6 +296,7 @@ class Admin extends CI_Controller {
 			function manage_schedule(){
 				$data['title_web']= 'adminpanel | Stradaa';
 				$data['path_content'] = 'admin/schedule/manage_schedule';
+				  $data['results'] = $this->mschedule->fetchAllSchedule(); 
 
 				$this->load->view('admin/index',$data);
 			}
@@ -301,9 +304,164 @@ class Admin extends CI_Controller {
 			function manage_schedule_grid(){
 				$data['title_web']= 'adminpanel | Stradaa';
 				$data['path_content'] = 'admin/schedule/manage_schedule_grid';
+				$this->form_validation->set_rules('search','Search','required');
 
-				$this->load->view('admin/index',$data);
+			  if(!$this->form_validation->run()){
+			  // Ngeload data
+			  $perpage = 10;
+			  $this->load->library('pagination'); // load libraray pagination
+			  $config['base_url'] = base_url($this->uri->segment(1).'/manage-schedule-grid/'); // configurate link pagination
+			  $config['total_rows'] = $this->mod->countData('schedule');// fetch total record in databae using load
+			  $config['per_page'] = $perpage; // Total data in one page
+			  $config['uri_segment'] = 3; // catch uri segment where locate in 4th posisition
+			  $choice = $config['total_rows']/$config['per_page'] = $perpage; // Total record divided by total data in one page
+			  $config['num_links'] = round($choice); // Rounding Choice Variable
+			  $config['use_page_numbers'] = TRUE;
+			  $this->pagination->initialize($config); // intialize var config
+			  $page = ($this->uri->segment(3))? $this->uri->segment(3) : 0; // If uri segment in 4th = 0 so this program not catch the uri segment
+			  $data['results'] = $this->mschedule->fetchSchedule($config['per_page'],$page,$this->uri->segment(3)); // fetch data using limit and pagination
+			  $data['links'] = $this->pagination->create_links(); // Make a variable (array) link so the view can call the variable
+			  $data['total_rows'] = $this->mod->countData('class'); // Make a variable (array) link so the view can call the variable
+			  $this->load->view('admin/index',$data);
+			  }
+			  else{
+			    $data['results'] = $this->mschedule->fetchScheduleSearch($_POST); // fetch data using limit and pagination
+			    $data['links'] = false;
+			    $this->load->view('admin/index',$data);
+			  }
 			}
+
+			function add_schedule(){
+		    $data['title_web'] = 'Add Schedule | Adminpanel Strada';
+		    $data['path_content'] = 'admin/schedule/add_schedule';
+				$data['class'] = $this->mschedule->fetchAllClass();
+				$data['subject'] = $this->mschedule->fetchAllSubject();
+				$data['classroom'] = $this->mschedule->fetchAllClassroom();
+				$this->form_validation->set_rules('class','Class Name','required');
+				$this->form_validation->set_rules('subject','Subject','required');
+				$this->form_validation->set_rules('classroom','Classroom Name','required');
+		    $this->form_validation->set_rules('name_schedule',' Schedule Name','required');
+		    $this->form_validation->set_rules('hour_start','Hour Start','required');
+				$this->form_validation->set_rules('hour_end','Hour End','required');
+				$this->form_validation->set_rules('date_schedule','Date','required');
+		    if(!$this->form_validation->run()){
+		      $this->load->view('admin/index',$data);
+		    }
+		    else{
+		      $save = $this->mschedule->saveSchedule($_POST);
+		      redirect(base_url($this->uri->segment(1).'/manage_schedule_grid'));
+		    }
+		  }
+
+			function edit_schedule(){
+		    $data['title_web'] = 'Edit Schedule | Adminpanel Strada';
+		    $data['path_content'] = 'admin/schedule/edit_schedule';
+				$data['class'] = $this->mschedule->fetchAllClass();
+				$data['subject'] = $this->mschedule->fetchAllSubject();
+				$data['classroom'] = $this->mschedule->fetchAllClassroom();
+		    $id=$this->uri->segment(3);
+		    $data['result']=$this->mod->getDataWhere('schedule','id_schedule',$id);
+		    if($data['result']==FALSE)
+		      redirect(base_url('schedule/manage_schedule'));
+					$this->form_validation->set_rules('class','Class Name','required');
+					$this->form_validation->set_rules('subject','Subject','required');
+					$this->form_validation->set_rules('classroom','Classroom Name','required');
+			    $this->form_validation->set_rules('name_schedule',' Schedule Name','required');
+			    $this->form_validation->set_rules('hour_start','Hour Start','required');
+					$this->form_validation->set_rules('hour_end','Hour End','required');
+					$this->form_validation->set_rules('date_schedule','Date','required');
+		    if(!$this->form_validation->run()){
+		      $this->load->view('admin/index',$data);
+		    }
+		    else{
+		      $save = $this->mschedule->editSchedule($_POST,$id);
+		      redirect(base_url($this->uri->segment(1).'/manage_schedule_grid'));
+		    }
+		  }
+		  function delete_schedule(){
+		    $id = $this->uri->segment(3);
+		    $this->db->where('id_schedule',$id);
+		    $this->db->delete('schedule');
+		    redirect(base_url($this->uri->segment(1).'/manage_schedule_grid'));
+		  }
+
+			function manage_classroom(){
+			  $data['title_web'] = 'View All Class | Adminpanel Strada';
+			  $data['path_content'] = 'admin/class/manage_classroom';
+
+			  $this->form_validation->set_rules('search','Search','required');
+
+			  if(!$this->form_validation->run()){
+			  // Ngeload data
+			  $perpage = 10;
+			  $this->load->library('pagination'); // load libraray pagination
+			  $config['base_url'] = base_url($this->uri->segment(1).'/manage-classroom/'); // configurate link pagination
+			  $config['total_rows'] = $this->mod->countData('classroom');// fetch total record in databae using load
+			  $config['per_page'] = $perpage; // Total data in one page
+			  $config['uri_segment'] = 3; // catch uri segment where locate in 4th posisition
+			  $choice = $config['total_rows']/$config['per_page'] = $perpage; // Total record divided by total data in one page
+			  $config['num_links'] = round($choice); // Rounding Choice Variable
+			  $config['use_page_numbers'] = TRUE;
+			  $this->pagination->initialize($config); // intialize var config
+			  $page = ($this->uri->segment(3))? $this->uri->segment(3) : 0; // If uri segment in 4th = 0 so this program not catch the uri segment
+			  $data['results'] = $this->mclass->fetchClassroom($config['per_page'],$page,$this->uri->segment(3)); // fetch data using limit and pagination
+			  $data['links'] = $this->pagination->create_links(); // Make a variable (array) link so the view can call the variable
+			  $data['total_rows'] = $this->mod->countData('class'); // Make a variable (array) link so the view can call the variable
+			  $this->load->view('admin/index',$data);
+			  }
+			  else{
+			    $data['results'] = $this->mclass->fetchClassroomSearch($_POST); // fetch data using limit and pagination
+			    $data['links'] = false;
+			    $this->load->view('admin/index',$data);
+			  }
+			}
+
+			function add_classroom(){
+		    $data['title_web'] = 'Add subject | Adminpanel Strada';
+		    $data['path_content'] = 'admin/class/add_classroom';
+		    $this->form_validation->set_rules('name_classroom','Name Class','required');
+
+
+
+		    if(!$this->form_validation->run()){
+		      $this->load->view('admin/index',$data);
+		    }
+		    else{
+		      $save = $this->mclass->saveClassroom($_POST);
+		      redirect(base_url($this->uri->segment(1).'/manage-classroom'));
+		    }
+		  }
+
+		  function edit_classroom(){
+		    $data['title_web'] = 'Edit subject | Adminpanel Strada';
+		    $data['path_content'] = 'admin/class/edit_classroom';
+		    $id=$this->uri->segment(3);
+		    $data['result']=$this->mod->getDataWhere('classroom','id_classroom',$id);
+		    if($data['result']==FALSE)
+		      redirect(base_url('class/manage_classroom'));
+
+					$this->form_validation->set_rules('name_classroom','Name Class','required');
+
+
+
+		    if(!$this->form_validation->run()){
+		      $this->load->view('admin/index',$data);
+		    }
+		    else{
+		      $save = $this->mclass->editClassroom($_POST,$id);
+		      redirect(base_url($this->uri->segment(1).'/manage-classroom'));
+		    }
+		  }
+		  function delete_classroom(){
+		    $id = $this->uri->segment(3);
+		    $this->db->where('id_classroom',$id);
+		    $this->db->delete('classroom');
+		    redirect(base_url($this->uri->segment(1).'/manage-classroom'));
+		  }
+
+
+
+
 
 
 
