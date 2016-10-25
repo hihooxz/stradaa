@@ -14,11 +14,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Manage Class
+        Manage Classroom
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Manage Class</li>
+        <li class="active">Manage Classroom</li>
       </ol>
     </section>
 
@@ -37,15 +37,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
      <!-- /.box-header -->
     <div class="box-body">
-      <a class="btn btn-sm vcd-btn-primary btn-rd" style="margin-bottom:10px" href="<?php echo base_url($this->uri->segment(1).'/add-class')?>" role="button">
-        <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Add Class
+      <a class="btn btn-sm vcd-btn-primary btn-rd" style="margin-bottom:10px" href="<?php echo base_url($this->uri->segment(1).'/add-classroom')?>" role="button">
+        <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Add Classroom
       </a>
       <table id="example1" class="table table-responsive table-bordered table-striped">
       <thead>
         <tr>
           <th>No.</th>
-          <th>Classroo Name</th>
-
+          <th>Classroom Name</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -83,7 +82,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <tfoot>
         <tr>
           <th>No.</th>
-          <th>Class Name</th>
+          <th>Classroom Name</th>
           <th>Action</th>
         </tr>
       </tfoot>

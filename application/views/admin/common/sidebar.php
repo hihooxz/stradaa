@@ -72,7 +72,7 @@
             <li><a href="<?php echo base_url($this->uri->segment(1).'/manage-schedule-grid')?>"><i class="fa fa-cog"> Manage Schedule Grid</i></a></li>
         </ul>
       </li>
-      <li><a href="<?php echo base_url($this->uri->segment(1).'/edit_setting')?>"><i class="fa fa-cogs"></i> <span>Setting</span></a></li>
+      <li><a href="<?php echo base_url($this->uri->segment(1).'/edit-setting')?>"><i class="fa fa-cogs"></i> <span>Setting</span></a></li>
     </ul>
     <!-- /.sidebar-menu -->
   </section>

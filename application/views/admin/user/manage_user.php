@@ -36,6 +36,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
      <!-- /.box-header -->
     <div class="box-body">
+    <a class="btn btn-sm vcd-btn-primary btn-rd" style="margin:10px 0" href="<?php echo base_url($this->uri->segment(1).'/add-user')?>" role="button">
+        <i class="fa fa-plus fa-fw" aria-hidden="true"></i>Add User
+      </a>
       <table id="example1" class="table table-responsive table-bordered table-striped">
       <thead>
         <tr>

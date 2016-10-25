@@ -24,11 +24,11 @@
     <!-- Main content -->
     <section class="content">
       <div class="col-md-12">
-      <a class="btn btn-sm vcd-btn-primary btn-rd" style="margin-bottom:10px" href="#" role="button">
+      <a class="btn btn-sm vcd-btn-primary btn-rd" style="margin-bottom:10px" href="<?php echo base_url($this->uri->segment(1).'/add-schedule')?>" role="button">
         <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Add Schedule
       </a>
-      <a class="btn btn-sm vcd-btn-primary btn-rd" style="margin-bottom:10px" href="#" role="button">
-        <i class="fa fa-calendar fa-fw" aria-hidden="true"></i> Calendar Mode
+      <a class="btn btn-sm vcd-btn-primary btn-rd" style="margin-bottom:10px" href="<?php echo base_url($this->uri->segment(1).'/manage-schedule')?>" role="button">
+        <i class="fa fa-calendar fa-fw" aria-hidden="true"></i> Calendar Style
       </a>
 
           <div class="box box-primary">
@@ -59,8 +59,8 @@
                 <td><?php echo $i ?></td>
                 <td><?php echo $rows->name_schedule?></td>
                 <td><?php echo date('D, d M Y',strtotime($rows->date_schedule)) ?></td>
-                <td><?php echo date('H:i',strtotime($rows->hour_start)) ?></td>
-                <td><?php echo date('H:i',strtotime($rows->hour_end)) ?></td>
+                <td><?php echo $rows->hour_start ?></td>
+                <td><?php echo $rows->hour_end ?></td>
                 <td><?php echo $rows->name_classroom?></td>
                 <td><?php echo $rows->class_name?></td>
                 <td><?php echo $rows->subject?></td>

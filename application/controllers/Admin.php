@@ -6,7 +6,7 @@ class Admin extends CI_Controller {
 		parent::__construct();
 
 		if($this->session->userdata('permission')!=1)
-		redirect(base_url('dashboard/login'));
+			redirect(base_url('dashboard/login'));
 
 		$this->load->model('madmin');
 		$this->load->model('muser','mus');

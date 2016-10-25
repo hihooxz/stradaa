@@ -14,9 +14,9 @@ class Frontpage extends CI_Controller {
 		}else{
 			if($this->session->userdata('permission')==1)
 				redirect(base_url('admin'));
-				elseif($this->session->userdata('permission')==2)
+			else if($this->session->userdata('permission')==2)
 				redirect(base_url('guru'));
-				elseif($this->session->userdata('permission')==3)
+			elseif($this->session->userdata('permission')==3)
 				redirect(base_url('murid'));
 
 		}

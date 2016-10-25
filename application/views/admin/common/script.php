@@ -23,11 +23,19 @@ $('#datepicker').datepicker({
       todayBtn:"linked"
     });
     $(".timepicker").timepicker({
-      showInputs: false
+      defaultTime: '07:00',
+    minuteStep: 1,
+    disableFocus: true,
+    template: 'dropdown',
+    showMeridian:false
 
     });
     $(".timepicker2").timepicker({
-      showInputs: false
+      defaultTime: '07:00',
+    minuteStep: 1,
+    disableFocus: true,
+    template: 'dropdown',
+    showMeridian:false
     });
 </script>
 <?php
@@ -93,7 +101,7 @@ $('#datepicker').datepicker({
             foreach ($results as $rows ) {
               ?>
               {
-                title: '<?php echo $rows->subject?>',
+                title: '<?php echo $rows->subject.' \n '.$rows->class_name.' \n '.$rows->name_classroom?>',
                 start: '<?php echo date('Y-m-d',strtotime($rows->date_schedule))." ".date('H',strtotime($rows->hour_start)).":".date('i',strtotime($rows->hour_end))?>',
                 end: '<?php echo date('Y-m-d',strtotime($rows->date_schedule))?>',
                 allDay: false,

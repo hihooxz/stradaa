@@ -14,8 +14,8 @@
     <section class="content">
     <div class="box body">
     <div class="container">
-      <a class="btn btn-sm vcd-btn-primary btn-rd" style="margin-top:10px" href="#" role="button">
-        <i class="fa fa-arrow-left fa-fw" aria-hidden="true"></i>Back to Dashboard
+      <a class="btn btn-sm vcd-btn-primary btn-rd" style="margin-top:10px" href="<?php echo base_url($this->uri->segment(1).'/manage-schedule')?>" role="button">
+        <i class="fa fa-arrow-left fa-fw" aria-hidden="true"></i>Back to Manage Schedule
       </a>
       <form class="" method="post">
           <?php echo validation_errors()?>
@@ -47,7 +47,13 @@
                 }
                 echo form_dropdown('class',$options,set_value('class'),"class='form-control'");
               }
-
+              else{
+                ?>
+                No Data Class
+                <a class="btn btn-sm vcd-btn-primary btn-rd" href="<?php echo base_url($this->uri->segment(1).'/add-class')?>">Add Class
+                </a>
+                <?php
+              }
 
              ?>
           </div>
@@ -71,7 +77,13 @@
                 }
                 echo form_dropdown('subject',$options,set_value('subject'),"class='form-control'");
               }
-
+              else{
+                ?>
+                No Data Subject
+                <a class="btn btn-sm vcd-btn-primary btn-rd" href="<?php echo base_url($this->uri->segment(1).'/add-subject')?>">Add Subject
+                </a>
+                <?php
+              }
 
              ?>
           </div>
@@ -95,7 +107,13 @@
                 }
                 echo form_dropdown('classroom',$options,set_value('name_classroom'),"class='form-control'");
               }
-
+              else{
+                ?>
+                No Data Classroom
+                <a class="btn btn-sm vcd-btn-primary btn-rd" href="<?php echo base_url($this->uri->segment(1).'/add-classroom')?>">Add Classroom
+                </a>
+                <?php
+              }
 
              ?>
           </div>

@@ -67,10 +67,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <td><?php echo $rows->class_name ?></td>
                 <td><?php if($rows->status_class == 0) echo "Active"; else echo "Non Active"; ?></td>
           <td>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="<?php echo base_url($this->uri->segment(1).'/edit-class/'.$rows->id_class)?>" role="button">
+            <a title="Edit" class="btn btn-sm vcd-btn-primary btn-rd" href="<?php echo base_url($this->uri->segment(1).'/edit-class/'.$rows->id_class)?>" role="button">
               <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
             </a>
-            <a class="btn btn-sm vcd-btn-primary btn-rd" href="<?php echo base_url($this->uri->segment(1).'/delete-class/'.$rows->id_class)?>" role="button">
+            <a title="Student Class" class="btn btn-sm vcd-btn-primary btn-rd" href="<?php echo base_url($this->uri->segment(1).'/student-class/'.$rows->id_class)?>">
+              <i class="fa fa-users fa-fw" aria-hidden="true"></i>
+            </a>
+            <a title="Delete" class="btn btn-sm vcd-btn-primary btn-rd" href="<?php echo base_url($this->uri->segment(1).'/delete-class/'.$rows->id_class)?>" role="button">
               <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
             </a>
           </td>
