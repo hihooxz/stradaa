@@ -24,24 +24,22 @@ $('#datepicker').datepicker({
     });
     $(".timepicker").timepicker({
       defaultTime: '07:00',
-    minuteStep: 1,
+    minuteStep: 15,
     disableFocus: true,
-    template: 'dropdown',
     showMeridian:false
 
     });
     $(".timepicker2").timepicker({
       defaultTime: '07:00',
-    minuteStep: 1,
+    minuteStep: 15,
     disableFocus: true,
-    template: 'dropdown',
     showMeridian:false
     });
 </script>
 <?php
 
   $url=$this->uri->segment(2);
-  if($url == "manage-schedule"){
+  if($url == "manage-schedule" || $url == "view-schedule"){
 ?>
 
 <script>
@@ -102,14 +100,13 @@ $('#datepicker').datepicker({
               ?>
               {
                 title: '<?php echo $rows->subject.' \n '.$rows->class_name.' \n '.$rows->name_classroom?>',
-                start: '<?php echo date('Y-m-d',strtotime($rows->date_schedule))." ".date('H',strtotime($rows->hour_start)).":".date('i',strtotime($rows->hour_end))?>',
-                end: '<?php echo date('Y-m-d',strtotime($rows->date_schedule))?>',
+                start: '<?php echo date('Y-m-d',strtotime($rows->date_schedule))." ".date('H',strtotime($rows->hour_start)).":".date('i',strtotime($rows->hour_start))?>',
+                end: '<?php echo date('Y-m-d',strtotime($rows->date_schedule))." ".date('H',strtotime($rows->hour_end)).":".date('i',strtotime($rows->hour_end))?>',
                 allDay: false,
 
                 backgroundColor: "#f39c12", //yellow
                 borderColor: "#f39c12" //yellow
-              }
-              <?php
+              }<?php
               if($i!=$count){
                 echo ",";
               }
@@ -154,3 +151,68 @@ $('#datepicker').datepicker({
 <?php
 }
 ?>
+<?php
+  if($url == "add-schedule" || $url == "edit-schedule"){
+?>
+<script>
+  $( function() {
+    var availableTags = [
+      <?php
+        $pengawas = $this->mod->fetchDataWhere('user','permission',2);
+        $count = $this->mod->countWhereData('user','permission',2);
+        if($pengawas!=FALSE){
+          $i = 1;
+          foreach ($pengawas as $rows) {
+            if($i!=$count)
+              echo "\"".$rows->username."\",";
+            else
+              echo "\"".$rows->username."\"";
+            $i++;
+          }
+        }
+      ?>
+    ];
+    $( "#pengawas1" ).autocomplete({
+      source: availableTags
+    });
+    $( "#pengawas2" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  </script>
+  <?php
+}
+  if($url == "add-student" || $url == "edit-student"){
+    ?>
+    <script>
+    $( function() {
+    var availableTags = [
+      <?php
+        $student = $this->mclass->fetchStudentNotInput($this->uri->segment(3));
+        $count = $this->mclass->countStudentNotInput($this->uri->segment(3));
+        if($student!=FALSE){
+          $i = 1;
+          foreach ($student as $rows) {
+            if($i!=$count){
+              ?>
+              {value: "<?php echo $rows->username?>",label: "<?php echo $rows->full_name." - ".$rows->username?>"},
+              <?php
+            }
+            else{
+              ?>
+              {value: "<?php echo $rows->username?>",label: "<?php echo $rows->full_name." - ".$rows->username?>"}
+              <?php
+            }
+            $i++;
+          }
+        }
+      ?>
+    ];
+    $( "#student" ).autocomplete({
+      source: availableTags
+    });
+  } );
+    </script>
+    <?php
+    }
+  ?>

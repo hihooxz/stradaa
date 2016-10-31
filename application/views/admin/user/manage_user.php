@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html>
-<head>
-  </head>
-<body class="hold-transition skin-blue sidebar-mini">
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -74,9 +64,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         }
       }
         ?>
-          <?php
-            echo $links;
-            ?>
     </tbody>
       <tfoot>
         <tr>
@@ -90,6 +77,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </tfoot>
 
       </table>
+      <center>
+        <?php
+            echo $links;
+            ?>
+      </center>
     </div>
   </div>
 
@@ -99,6 +91,3 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.content-wrapper -->
 
   <!-- Main Footer -->
-
-</body>
-</html>

@@ -15,9 +15,9 @@ class Frontpage extends CI_Controller {
 			if($this->session->userdata('permission')==1)
 				redirect(base_url('admin'));
 			else if($this->session->userdata('permission')==2)
-				redirect(base_url('guru'));
+				redirect(base_url('teacher'));
 			elseif($this->session->userdata('permission')==3)
-				redirect(base_url('murid'));
+				redirect(base_url('student'));
 
 		}
 	}
@@ -32,7 +32,7 @@ class Frontpage extends CI_Controller {
 		else{
 			$session = array(
 					'loginAdmin' => TRUE,
-					'idAdmin' => $data['id_user'],
+					'idUser' => $data['id_user'],
 					'username'=> $data['username'],
 					'permission' => $data['permission']
 				);

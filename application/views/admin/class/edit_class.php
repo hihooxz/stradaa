@@ -42,7 +42,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   '0' => 'Active',
                   '1' => 'Non Active'
                 );
-                echo form_dropdown('status_class',$options,$result['id_class'],"class='form-control'");
+                echo form_dropdown('status_class',$options,$result['status_class'],"class='form-control'");
                ?>
             </div>
             <div class="col-md-3 col-sm-3 hidden-xs"></div>

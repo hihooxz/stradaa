@@ -84,9 +84,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         }
       }
         ?>
-          <?php
-            echo $links;
-            ?>
       </tbody>
       <tfoot>
         <tr>
@@ -97,6 +94,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </tr>
       </tfoot>
       </table>
+      <center>
+        <?php
+            echo $links;
+            ?>
+      </center>
     </div>
   </div>
 

@@ -21,13 +21,25 @@
     <!-- Main content -->
     <section class="content">
       <div class="col-md-12">
+      <?php
+        if($this->session->userdata('permission') == 1){
+      ?>
       <a class="btn btn-sm vcd-btn-primary btn-rd" style="margin-bottom:10px" href="<?php echo base_url($this->uri->segment(1).'/add-schedule')?>" role="button">
         <i class="fa fa-plus fa-fw" aria-hidden="true"></i> Add Schedule
       </a>
       <a class="btn btn-sm vcd-btn-primary btn-rd" style="margin-bottom:10px" href="<?php echo base_url($this->uri->segment(1).'/manage-schedule-grid')?>" role="button">
         <i class="fa fa-list fa-fw" aria-hidden="true"></i> Grid Style
       </a>
-
+      <?php
+      }
+      else if($this->session->userdata('permission') != 1){
+        ?>
+        <a class="btn btn-sm vcd-btn-primary btn-rd" style="margin-bottom:10px" href="<?php echo base_url($this->uri->segment(1).'/view-schedule-grid')?>" role="button">
+          <i class="fa fa-list fa-fw" aria-hidden="true"></i> Grid Style
+        </a>
+        <?php
+      }
+      ?>
           <div class="box box-primary">
             <div class="box-body no-padding">
               <!-- THE CALENDAR -->

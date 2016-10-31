@@ -48,7 +48,7 @@
                   echo validation_errors();
                 ?>
                 <div class="loginh1" style="color:#fff">
-                  <h1>Strada Santi Thomas Aquino</h1>
+                  <h1>Strada Santo Thomas Aquino</h1>
                   <p>&copy;2016 All Rights Reserved. Developed By <a href="http://dzillaweb.com">Dzilla Web</a></p>
                 </div>
               </div>

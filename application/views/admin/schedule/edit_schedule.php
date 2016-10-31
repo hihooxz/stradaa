@@ -40,7 +40,6 @@
 
             $options = array();
             if($class!=FALSE){
-
               foreach ($class as $rows) {
 
                   $options[$rows->id_class] = $rows->class_name;
@@ -158,13 +157,20 @@
         <div class="col-md-3 col-sm-3 hidden-xs"></div>
       </div>
     </div>
+    <?php
+      if($results!=FALSE){
+        foreach ($results as $rows) {
+          $pengawas[$rows->role] = $rows->username;
+        }
+      }
+    ?>
     <div class="form-group">
       <div class="row">
         <div class="col-md-3 col-sm-3 col-xs-3 text-right">
           <label class="control-label">Pengawas 1</label>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-9">
-          <input type="text" class="form-control col-md-7 col-xs-12">
+          <input type="text" name="pengawas1" class="form-control col-md-7 col-xs-12" value="<?php if(isset($pengawas[1])) echo $pengawas[1]?>" id="pengawas1">
         </div>
         <div class="col-md-3 col-sm-3 hidden-xs"></div>
       </div>
@@ -175,7 +181,7 @@
           <label class="control-label">Pengawas 2</label>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-9">
-          <input type="text" class="form-control col-md-7 col-xs-12">
+          <input type="text" name="pengawas2" class="form-control col-md-7 col-xs-12" value="<?php if(isset($pengawas[2])) echo $pengawas[2]?>" id="pengawas2">
           <button class="btn btn-sm vcd-btn-primary btn-rd" style="margin-top:10px" href="#" role="button">
             Save
           </button>

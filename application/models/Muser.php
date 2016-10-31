@@ -61,4 +61,30 @@ class Muser extends CI_Model {
 	    }
 	    else return FALSE;
 		}
+    function editProfile($data,$id){
+      $array = array(
+          'email' => $data['email'],
+          'full_name' => $data['full_name'],
+        );
+      $this->db->where('id_user',$id);
+      $this->db->update('user',$array);
+      return 1;
+    }
+    function checkPassword($current,$id){
+      $this->db->where('password',md5($current));
+      $this->db->where('id_user',$id);
+      $query = $this->db->get('user');
+      if($query->num_rows()>0){
+        return $query->row_array();
+      }
+      else return FALSE;
+    }
+    function changePassword($data,$id){
+      $array = array(
+          'password' => md5($data['new'])
+        );
+
+      $this->db->where('id_user',$id);
+      $this->db->update('user',$array);
+    }
 }

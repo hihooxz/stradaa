@@ -64,7 +64,7 @@ desired effect
             <label class="control-label">Username</label>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-9">
-            <input type="text" class="form-control col-md-7 col-xs-12"name="username"value="<?php echo $result['username']?>">
+            <input type="text" class="form-control col-md-7 col-xs-12" name="username" value="<?php echo $result['username']?>">
           </div>
           <div class="col-md-3 col-sm-3 hidden-xs"></div>
         </div>
@@ -75,18 +75,7 @@ desired effect
             <label class="control-label">Password</label>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-9">
-            <input type="password" class="form-control col-md-7 col-xs-12"name="password">
-          </div>
-          <div class="col-md-3 col-sm-3 hidden-xs"></div>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="row">
-          <div class="col-md-3 col-sm-3 col-xs-3 text-right">
-            <label class="control-label">Full Name</label>
-          </div>
-          <div class="col-md-6 col-sm-6 col-xs-9">
-            <input type="text" class="form-control col-md-7 col-xs-12"name="full_name"value="<?php echo $result['full_name']?>">
+            <input type="password" class="form-control col-md-7 col-xs-12" name="password">
           </div>
           <div class="col-md-3 col-sm-3 hidden-xs"></div>
         </div>
@@ -97,7 +86,18 @@ desired effect
             <label class="control-label">Confirm Password</label>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-9">
-            <input type="password" class="form-control col-md-7 col-xs-12"name="confirm_password">
+            <input type="password" class="form-control col-md-7 col-xs-12" name="confirm_password">
+          </div>
+          <div class="col-md-3 col-sm-3 hidden-xs"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+            <label class="control-label">Full Name</label>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-9">
+            <input type="text" class="form-control col-md-7 col-xs-12" name="full_name" value="<?php echo $result['full_name']?>">
           </div>
           <div class="col-md-3 col-sm-3 hidden-xs"></div>
         </div>
@@ -108,12 +108,14 @@ desired effect
             <label class="control-label">Permission</label>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-9">
-            <select id="heard" class="form-control" name="permission" value="<?php echo $result['permission']?>">
-              <option value="1">Admin</option>
-              <option value="2">Guru</option>
-              <option value="3">Murid</option>
-
-            </select>
+            <?php
+              $options = array(
+                  1 => 'Admin',
+                  2 => 'Guru',
+                  3 => 'Murid'
+                );
+              echo form_dropdown('permission',$options,$result['permission'],'class="form-control"');
+            ?>
           </div>
           <div class="col-md-3 col-sm-3 hidden-xs"></div>
         </div>

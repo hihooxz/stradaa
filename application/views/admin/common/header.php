@@ -29,3 +29,5 @@
 
   <link rel="stylesheet" href="<?php echo base_url('asset/asset_default/plugins/fullcalendar/fullcalendar.min.css')?>">
   <link rel="stylesheet" href="<?php echo base_url('asset/asset_default/plugins/fullcalendar/fullcalendar.print.css')?>" media="print">
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">

@@ -14,8 +14,6 @@ class Admin extends CI_Controller {
 		$this->load->model('mclass');
 		$this->load->model('msetting');
 		$this->load->model('mschedule');
-
-
 	}
 	public function index(){
 		$data['title_web']= 'adminpanel | Stradaa';
@@ -36,7 +34,7 @@ class Admin extends CI_Controller {
 		else{
 			$session = array(
 					'loginAdmin' => TRUE,
-					'idAdmin' => $data['id_user'],
+					'idUser' => $data['id_user'],
 					'username'=> $data['username'],
 					'permission' => $data['permission']
 				);
@@ -82,7 +80,7 @@ class Admin extends CI_Controller {
 			$data['path_content'] = 'admin/user/add_user';
 			$this->form_validation->set_rules('username','Username','required');
 			$this->form_validation->set_rules('password','Password','required');
-			$this->form_validation->set_rules('confirm_passowrd','Password Must Be Matches','required|matches[password]');
+			$this->form_validation->set_rules('confirm_password','Confirm Password','required|matches[password]');
 			$this->form_validation->set_rules('email','Email','required|valid_email');
 			$this->form_validation->set_rules('full_name','full Name','required');
 			$this->form_validation->set_rules('permission','Permission','required');
@@ -92,7 +90,7 @@ class Admin extends CI_Controller {
 			}
 			else{
 				$save = $this->mus->saveUser($_POST);
-				redirect(base_url($this->uri->segment(1).'/manage_user'));
+				redirect(base_url($this->uri->segment(1).'/manage-user'));
 			}
 		}
 
@@ -102,11 +100,11 @@ class Admin extends CI_Controller {
 			$id=$this->uri->segment(3);
 			$data['result']=$this->mod->getDataWhere('user','id_user',$id);
 			if($data['result']==FALSE)
-				redirect(base_url('user/manage_user'));
+				redirect(base_url('user/manage-user'));
 
 				$this->form_validation->set_rules('username','Username','required');
-				$this->form_validation->set_rules('password','Password','required');
-					$this->form_validation->set_rules('confirm_password','Password Must Be Matches','matches[password]');
+				$this->form_validation->set_rules('password','Password','');
+				$this->form_validation->set_rules('confirm_password','Confirm Password','matches[password]');
 				$this->form_validation->set_rules('email','Email','required|valid_email');
 				$this->form_validation->set_rules('full_name','full Name','required');
 				$this->form_validation->set_rules('permission','Permission','required');
@@ -117,14 +115,14 @@ class Admin extends CI_Controller {
 			}
 			else{
 				$save = $this->mus->editUser($_POST,$id);
-				redirect(base_url($this->uri->segment(1).'/manage_user'));
+				redirect(base_url($this->uri->segment(1).'/manage-user'));
 			}
 		}
 		function delete_user(){
 			$id = $this->uri->segment(3);
 			$this->db->where('id_user',$id);
 			$this->db->delete('user');
-			redirect(base_url($this->uri->segment(1).'/manage_user'));
+			redirect(base_url($this->uri->segment(1).'/manage-user'));
 		}
 
 		function manage_subject(){
@@ -169,7 +167,7 @@ class Admin extends CI_Controller {
 		    }
 		    else{
 		      $save = $this->msub->saveSubject($_POST);
-		      redirect(base_url($this->uri->segment(1).'/manage_subject'));
+		      redirect(base_url($this->uri->segment(1).'/manage-subject'));
 		    }
 		  }
 
@@ -179,7 +177,7 @@ class Admin extends CI_Controller {
 		    $id=$this->uri->segment(3);
 		    $data['result']=$this->mod->getDataWhere('subject','id_subject',$id);
 		    if($data['result']==FALSE)
-		      redirect(base_url('subject/manage_subject'));
+		      redirect(base_url('subject/manage-subject'));
 
 					$this->form_validation->set_rules('subject','subject','required');
 					$this->form_validation->set_rules('description','Description','required');
@@ -248,12 +246,12 @@ class Admin extends CI_Controller {
 		  }
 
 		  function edit_class(){
-		    $data['title_web'] = 'Edit subject | Adminpanel Strada';
+		    $data['title_web'] = 'Edit Class | Adminpanel Strada';
 		    $data['path_content'] = 'admin/class/edit_class';
 		    $id=$this->uri->segment(3);
 		    $data['result']=$this->mod->getDataWhere('class','id_class',$id);
 		    if($data['result']==FALSE)
-		      redirect(base_url('class/manage_class'));
+		      redirect(base_url('class/manage-class'));
 
 					$this->form_validation->set_rules('class_name','class','required');
 					$this->form_validation->set_rules('status_class','Status','required');
@@ -274,7 +272,65 @@ class Admin extends CI_Controller {
 		    $this->db->delete('class');
 		    redirect(base_url($this->uri->segment(1).'/manage-class'));
 		  }
+	function student_class(){
+		    $data['title_web'] = 'Student Class | Adminpanel Strada';
+		    $data['path_content'] = 'admin/class/student_class';
+		    $id=$this->uri->segment(3);
+		    $data['result']=$this->mod->getDataWhere('class','id_class',$id);
+		    if($data['result']==FALSE)
+		      redirect(base_url('class/manage-class'));
+			
+			$this->form_validation->set_rules('search','Search','required');
+		    if(!$this->form_validation->run()){
+			  // Ngeload data
+			  $perpage = 20;
+			  $this->load->library('pagination'); // load libraray pagination
+			  $config['base_url'] = base_url($this->uri->segment(1).'/student-class/'.$id.'/'); // configurate link pagination
+			  $config['total_rows'] = $this->mod->countData('class');// fetch total record in databae using load
+			  $config['per_page'] = $perpage; // Total data in one page
+			  $config['uri_segment'] = 4; // catch uri segment where locate in 4th posisition
+			  $choice = $config['total_rows']/$config['per_page'] = $perpage; // Total record divided by total data in one page
+			  $config['num_links'] = round($choice); // Rounding Choice Variable
+			  $config['use_page_numbers'] = TRUE;
+			  $this->pagination->initialize($config); // intialize var config
+			  $page = ($this->uri->segment(4))? $this->uri->segment(4) : 0; // If uri segment in 4th = 0 so this program not catch the uri segment
+			  $data['results'] = $this->mclass->fetchStudentClass($config['per_page'],$page,$this->uri->segment(4),$id); // fetch data using limit and pagination
+			  $data['links'] = $this->pagination->create_links(); // Make a variable (array) link so the view can call the variable
+			  $data['total_rows'] = $this->mod->countData('class'); // Make a variable (array) link so the view can call the variable
+			  $this->load->view('admin/index',$data);
+			  }
+			  else{
+			    $data['results'] = $this->mclass->fetchStudentClassSearch($_POST); // fetch data using limit and pagination
+			    $data['links'] = false;
+			    $this->load->view('admin/index',$data);
+			  }
+		  }
+	function add_student(){
+		    $data['title_web'] = 'Add Student | Adminpanel Strada';
+		    $data['path_content'] = 'admin/class/add_student';
+		    
+		    $id = $this->uri->segment(3);
+		    $data['result'] = $this->mod->getDataWhere('class','id_class',$id);
+		    if($data['result'] == false)
+		    	redirect(base_url($this->uri->segment(3).'/manage-class'));
 
+		    $this->form_validation->set_rules('student','Student Username','required');
+		    if(!$this->form_validation->run()){
+		      $this->load->view('admin/index',$data);
+		    }
+		    else{
+		      $save = $this->mclass->saveStudentClass($_POST,$id);
+		      redirect(base_url($this->uri->segment(1).'/student-class/'.$id));
+		    }
+		  }
+	function delete_student(){
+		    $id = $this->uri->segment(3);
+		    $student = $this->mod->getDataWhere('student','id_student',$id);
+
+		    $this->db->where('id_student',$id);
+		    $this->db->delete('student');
+		    redirect(base_url($this->uri->segment(1).'/student-class/'.$student['id_class']));
+		  }
 			function edit_setting(){
 				$data['title_web'] = 'Edit setting | Adminpanel Strada';
 				$data['path_content'] = 'admin/setting/edit_setting';
@@ -349,7 +405,7 @@ class Admin extends CI_Controller {
 		    }
 		    else{
 		      $save = $this->mschedule->saveSchedule($_POST);
-		      redirect(base_url($this->uri->segment(1).'/manage_schedule_grid'));
+		      redirect(base_url($this->uri->segment(1).'/manage-schedule-grid'));
 		    }
 		  }
 
@@ -360,29 +416,31 @@ class Admin extends CI_Controller {
 				$data['subject'] = $this->mschedule->fetchAllSubject();
 				$data['classroom'] = $this->mschedule->fetchAllClassroom();
 		    $id=$this->uri->segment(3);
+		    $data['results'] = $this->mschedule->fetchTeacher($id);
 		    $data['result']=$this->mod->getDataWhere('schedule','id_schedule',$id);
 		    if($data['result']==FALSE)
-		      redirect(base_url('schedule/manage_schedule'));
-					$this->form_validation->set_rules('class','Class Name','required');
-					$this->form_validation->set_rules('subject','Subject','required');
-					$this->form_validation->set_rules('classroom','Classroom Name','required');
+		      redirect(base_url('schedule/manage-schedule'));
+
+				$this->form_validation->set_rules('class','Class Name','required');
+				$this->form_validation->set_rules('subject','Subject','required');
+				$this->form_validation->set_rules('classroom','Classroom Name','required');
 			    $this->form_validation->set_rules('name_schedule',' Schedule Name','required');
 			    $this->form_validation->set_rules('hour_start','Hour Start','required');
-					$this->form_validation->set_rules('hour_end','Hour End','required');
-					$this->form_validation->set_rules('date_schedule','Date','required');
+				$this->form_validation->set_rules('hour_end','Hour End','required');
+				$this->form_validation->set_rules('date_schedule','Date','required');
 		    if(!$this->form_validation->run()){
 		      $this->load->view('admin/index',$data);
 		    }
 		    else{
 		      $save = $this->mschedule->editSchedule($_POST,$id);
-		      redirect(base_url($this->uri->segment(1).'/manage_schedule_grid'));
+		      redirect(base_url($this->uri->segment(1).'/manage-schedule-grid'));
 		    }
 		  }
 		  function delete_schedule(){
 		    $id = $this->uri->segment(3);
 		    $this->db->where('id_schedule',$id);
 		    $this->db->delete('schedule');
-		    redirect(base_url($this->uri->segment(1).'/manage_schedule_grid'));
+		    redirect(base_url($this->uri->segment(1).'/manage-schedule-grid'));
 		  }
 
 			function manage_classroom(){
@@ -438,7 +496,7 @@ class Admin extends CI_Controller {
 		    $id=$this->uri->segment(3);
 		    $data['result']=$this->mod->getDataWhere('classroom','id_classroom',$id);
 		    if($data['result']==FALSE)
-		      redirect(base_url('class/manage_classroom'));
+		      redirect(base_url('class/manage-classroom'));
 
 					$this->form_validation->set_rules('name_classroom','Name Class','required');
 

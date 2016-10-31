@@ -102,4 +102,59 @@ class Mclass extends CI_Model {
 		    }
 		    else return FALSE;
 			}
+	function saveStudentClass($data,$id){
+		$student = $this->mod->getDataWhere('user','username',$data['student']);
+		$array = array(
+				'id_class' => $id,
+				'id_user' => $student['id_user']
+			);
+		$this->db->insert('student',$array);
+		return 1;
+	}
+	function fetchStudentClass($limit,$start,$pagenumber,$id) {
+
+    if($pagenumber!="")
+      $this->db->limit($limit,($pagenumber*$limit)-$limit);
+    else
+      $this->db->limit($limit,$start);
+
+  	$this->db->where('student.id_class',$id);
+  	$this->db->join('class','class.id_class = student.id_class');
+  	$this->db->join('user','user.id_user = student.id_user');
+    $this->db->order_by('username','ASC');
+    $query = $this->db->get('student');
+    if($query->num_rows()>0){
+      return $query->result();
+    }
+    else return FALSE;
+  }
+  function fetchStudentNotInput($id){
+  	$sql = "
+			SELECT st_user.*
+			FROM st_user
+			WHERE st_user.id_user NOT IN (SELECT st_student.id_user from st_student WHERE id_class = '$id')
+			AND permission = 3
+			Order BY username ASC
+		";
+		$query = $this->db->query($sql);
+		if($query->num_rows()>0){
+			return $query->result();
+		}
+		else return FALSE;
+  }
+  function countStudentNotInput($id){
+  	$sql = "
+			SELECT count(*) as total_row
+			FROM st_user
+			WHERE st_user.id_user NOT IN (SELECT st_student.id_user from st_student WHERE id_class = '$id')
+			AND permission = 3
+			Order BY username ASC
+		";
+		$query = $this->db->query($sql);
+		$data = $query->row_array();
+		if($query->num_rows()>0){
+			return $data['total_row'];
+		}
+		else return 0;
+  }
 }

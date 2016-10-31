@@ -182,7 +182,7 @@
             <label class="control-label">Pengawas 1</label>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-9">
-            <input type="text" class="form-control col-md-7 col-xs-12">
+            <input type="text" class="form-control col-md-7 col-xs-12" placeholder="Type Username" id="pengawas1" name="pengawas1">
           </div>
           <div class="col-md-3 col-sm-3 hidden-xs"></div>
         </div>
@@ -193,7 +193,7 @@
             <label class="control-label">Pengawas 2</label>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-9">
-            <input type="text" class="form-control col-md-7 col-xs-12">
+            <input type="text" class="form-control col-md-7 col-xs-12" placeholder="Type Username" id="pengawas2" name="pengawas2">
             <button class="btn btn-sm vcd-btn-primary btn-rd" style="margin-top:10px" href="#" role="button">
               Save
             </button>
