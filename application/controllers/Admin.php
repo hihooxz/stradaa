@@ -84,6 +84,8 @@ class Admin extends CI_Controller {
 			$this->form_validation->set_rules('email','Email','required|valid_email');
 			$this->form_validation->set_rules('full_name','full Name','required');
 			$this->form_validation->set_rules('permission','Permission','required');
+			$this->form_validation->set_rules('alamat','Address','required');
+			$this->form_validation->set_rules('telephone','Telephone','required|numeric');
 
 			if(!$this->form_validation->run()){
 				$this->load->view('admin/index',$data);
@@ -108,7 +110,8 @@ class Admin extends CI_Controller {
 				$this->form_validation->set_rules('email','Email','required|valid_email');
 				$this->form_validation->set_rules('full_name','full Name','required');
 				$this->form_validation->set_rules('permission','Permission','required');
-
+				$this->form_validation->set_rules('alamat','Address','required');
+				$this->form_validation->set_rules('telephone','Telephone','required|numeric');
 
 			if(!$this->form_validation->run()){
 				$this->load->view('admin/index',$data);
@@ -279,7 +282,7 @@ class Admin extends CI_Controller {
 		    $data['result']=$this->mod->getDataWhere('class','id_class',$id);
 		    if($data['result']==FALSE)
 		      redirect(base_url('class/manage-class'));
-			
+
 			$this->form_validation->set_rules('search','Search','required');
 		    if(!$this->form_validation->run()){
 			  // Ngeload data
@@ -308,7 +311,7 @@ class Admin extends CI_Controller {
 	function add_student(){
 		    $data['title_web'] = 'Add Student | Adminpanel Strada';
 		    $data['path_content'] = 'admin/class/add_student';
-		    
+
 		    $id = $this->uri->segment(3);
 		    $data['result'] = $this->mod->getDataWhere('class','id_class',$id);
 		    if($data['result'] == false)
@@ -352,7 +355,7 @@ class Admin extends CI_Controller {
 			function manage_schedule(){
 				$data['title_web']= 'adminpanel | Stradaa';
 				$data['path_content'] = 'admin/schedule/manage_schedule';
-				  $data['results'] = $this->mschedule->fetchAllSchedule(); 
+				  $data['results'] = $this->mschedule->fetchAllSchedule();
 
 				$this->load->view('admin/index',$data);
 			}
