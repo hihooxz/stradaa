@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2016 at 03:37 PM
+-- Generation Time: Oct 31, 2016 at 05:51 AM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.22
 
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `st_schedule` (
   `date_schedule` date NOT NULL,
   `date_insert` datetime NOT NULL,
   PRIMARY KEY (`id_schedule`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=42 ;
 
 --
 -- Dumping data for table `st_schedule`
@@ -152,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `st_student` (
   `id_class` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   PRIMARY KEY (`id_student`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `st_student`
