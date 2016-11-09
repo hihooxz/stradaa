@@ -15,8 +15,8 @@
   <!-- Main content -->
   <section class="content">
   <div class="box">
-  <div class="box-body">
-    <div class="row">
+  <div class="box-body text-center count">
+    <!-- <div class="row">
       <div class="col-md-4 col-sm-4 col-xs-6">
         <div class="count-top">
           <i class="fa fa-calendar"></i> Total Schedule
@@ -54,7 +54,8 @@
       </div>
       <div class="col-md-4 col-sm-4 col-xs-6"></div>
       <div class="col-md-4 col-sm-4 col-xs-6"></div>
-    </div>
+    </div> -->
+    Welcome to E-scheduling
   </div>
   </div>
   </section>

@@ -32,6 +32,10 @@ class Teacher extends CI_Controller {
 
 		$this->form_validation->set_rules('full_name','Full Name','required');
 		$this->form_validation->set_rules('email','Email','required|valid_email');
+		$this->form_validation->set_rules('address','Address','required');
+			$this->form_validation->set_rules('telephone','Telephone','required|numeric');
+			$this->form_validation->set_rules('gender','Gender','required');
+			$this->form_validation->set_rules('birthday','Birthday','required');
 		if(!$this->form_validation->run()){
 			$this->load->view('admin/index',$data);
 		}

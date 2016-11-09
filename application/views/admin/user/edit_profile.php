@@ -42,6 +42,51 @@
           <div class="form-group">
             <div class="row">
               <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                <label class="control-label">Gender</label>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-9">
+                <label><input type="radio" name="gender" value="1" <?php if($result['gender'] == 1) echo "checked"?>> Male</label>
+                <label><input type="radio" name="gender" value="2" <?php if($result['gender'] == 2) echo "checked"?>> Female</label>
+              </div>
+              <div class="col-md-3 col-sm-3 hidden-xs"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                <label class="control-label">Telephone</label>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-9">
+                <input type="text" class="form-control col-md-7 col-xs-12" name="telephone"  value="<?php echo $result['telephone']?>">
+              </div>
+              <div class="col-md-3 col-sm-3 hidden-xs"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                <label class="control-label">Birthday</label>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-9">
+                <input type="text" class="form-control col-md-7 col-xs-12" name="birthday" id="datepicker" value="<?php if($result['birthday'] != "0000-00-00") echo date('d M Y',strtotime($result['birthday']))?>">
+              </div>
+              <div class="col-md-3 col-sm-3 hidden-xs"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+                <label class="control-label">Address</label>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-9">
+                <textarea class="form-control" rows="3"  name="address"><?php echo $result['address']?></textarea>
+              </div>
+              <div class="col-md-3 col-sm-3 hidden-xs"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-3 col-sm-3 col-xs-3 text-right">
                 <label class="control-label">Email</label>
               </div>
               <div class="col-md-6 col-sm-6 col-xs-9">

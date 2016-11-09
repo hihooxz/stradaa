@@ -54,7 +54,7 @@ class Admin extends CI_Controller {
     // Ngeload data
     $perpage = 10;
     $this->load->library('pagination'); // load libraray pagination
-    $config['base_url'] = base_url($this->uri->segment(1).'/user/manage_user/'); // configurate link pagination
+    $config['base_url'] = base_url($this->uri->segment(1).'/manage-user/'); // configurate link pagination
     $config['total_rows'] = $this->mod->countData('user');// fetch total record in databae using load
     $config['per_page'] = $perpage; // Total data in one page
     $config['uri_segment'] = 3; // catch uri segment where locate in 4th posisition
@@ -86,6 +86,8 @@ class Admin extends CI_Controller {
 			$this->form_validation->set_rules('permission','Permission','required');
 			$this->form_validation->set_rules('address','Address','required');
 			$this->form_validation->set_rules('telephone','Telephone','required|numeric');
+			$this->form_validation->set_rules('gender','Gender','required');
+			$this->form_validation->set_rules('birthday','Birthday','required');
 
 			if(!$this->form_validation->run()){
 				$this->load->view('admin/index',$data);
@@ -112,6 +114,8 @@ class Admin extends CI_Controller {
 				$this->form_validation->set_rules('permission','Permission','required');
 				$this->form_validation->set_rules('address','Address','');
 				$this->form_validation->set_rules('telephone','Telephone','numeric');
+				$this->form_validation->set_rules('gender','Gender','required');
+				$this->form_validation->set_rules('birthday','Birthday','required');
 
 			if(!$this->form_validation->run()){
 				$this->load->view('admin/index',$data);

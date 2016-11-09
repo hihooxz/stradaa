@@ -35,7 +35,9 @@ class Muser extends CI_Model {
 				'date_input' => date('Y-m-d H:i:s'),
         'permission' => $data['permission'],
 				'address' => $data['address'],
-				'telephone' => $data['telephone']
+				'telephone' => $data['telephone'],
+        'gender' => $data['gender'],
+        'birthday' => date('Y-m-d',strtotime($data['birthday']))
       );
     $this->db->insert('user',$array);
     return 1;
@@ -47,7 +49,9 @@ class Muser extends CI_Model {
           'full_name' => $data['full_name'],
           'permission' => $data['permission'],
 					'address' => $data['address'],
-					'telephone' => $data['telephone']
+					'telephone' => $data['telephone'],
+          'gender' => $data['gender'],
+          'birthday' => date('Y-m-d',strtotime($data['birthday']))
         );
 			if($data['password']!="")
 			$array['password']=md5($data['password']);
@@ -69,6 +73,10 @@ class Muser extends CI_Model {
       $array = array(
           'email' => $data['email'],
           'full_name' => $data['full_name'],
+          'address' => $data['address'],
+          'telephone' => $data['telephone'],
+          'gender' => $data['gender'],
+          'birthday' => date('Y-m-d',strtotime($data['birthday']))
         );
       $this->db->where('id_user',$id);
       $this->db->update('user',$array);

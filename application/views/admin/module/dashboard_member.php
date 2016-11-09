@@ -17,7 +17,7 @@
       <div class="box">
         <div class="box-body text-center count">
 
-          Welcome to E-learning
+          Welcome to E-scheduling
 
         </div>
       </div>

@@ -68,6 +68,29 @@
       <div class="form-group">
         <div class="row">
           <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+            <label class="control-label">Gender</label>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-9">
+            <label><input type="radio" name="gender" value="1"> Male</label>
+            <label><input type="radio" name="gender" value="2"> Female</label>
+          </div>
+          <div class="col-md-3 col-sm-3 hidden-xs"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+            <label class="control-label">Birthday</label>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-9">
+            <input type="text" class="form-control col-md-7 col-xs-12" name="birthday" id="datepicker">
+          </div>
+          <div class="col-md-3 col-sm-3 hidden-xs"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-3 col-sm-3 col-xs-3 text-right">
             <label class="control-label">Address</label>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-9">
