@@ -51,7 +51,7 @@
             <label class="control-label">Confirm Password</label>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-9">
-            <input type="password" class="form-control col-md-7 col-xs-12" name="confirm_password">
+            <input type="password" name="confirm" class="form-control col-md-7 col-xs-12" >
           </div>
           <div class="col-md-3 col-sm-3 hidden-xs"></div>
         </div>
@@ -73,7 +73,7 @@
             <label class="control-label">Address</label>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-9">
-            <textarea class="form-control" rows="3"  name="alamat"><?php echo $result['alamat']?></textarea>
+            <textarea class="form-control" rows="3"  name="address"><?php echo $result['address']?></textarea>
           </div>
           <div class="col-md-3 col-sm-3 hidden-xs"></div>
         </div>

@@ -34,7 +34,7 @@ class Muser extends CI_Model {
 				'last_login' => date('Y-m-d H:i:s'),
 				'date_input' => date('Y-m-d H:i:s'),
         'permission' => $data['permission'],
-				'alamat' => $data['alamat'],
+				'address' => $data['address'],
 				'telephone' => $data['telephone']
       );
     $this->db->insert('user',$array);
@@ -46,7 +46,7 @@ class Muser extends CI_Model {
           'email' => $data['email'],
           'full_name' => $data['full_name'],
           'permission' => $data['permission'],
-					'alamat' => $data['alamat'],
+					'address' => $data['address'],
 					'telephone' => $data['telephone']
         );
 			if($data['password']!="")

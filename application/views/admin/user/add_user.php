@@ -71,7 +71,7 @@
             <label class="control-label">Address</label>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-9">
-            <textarea class="form-control" rows="3"  name="alamat"></textarea>
+            <textarea class="form-control" rows="3"  name="address"></textarea>
           </div>
           <div class="col-md-3 col-sm-3 hidden-xs"></div>
         </div>

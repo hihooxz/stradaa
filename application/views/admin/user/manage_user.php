@@ -53,7 +53,7 @@
                 <td><?php echo $rows->email ?></td>
                 <td><?php echo date('D, d M Y H:i',strtotime($rows->last_login)) ?></td>
                 <td><?php if($rows->permission==1) echo "Admin"; elseif($rows->permission==2) echo "Guru"; elseif($rows->permission==3) echo "Murid";?></td>
-                <td><?php echo substr($rows->alamat,0,35) ?>..</td>
+                <td><?php echo substr($rows->address,0,35) ?>..</td>
                 <td><?php echo $rows->telephone?></td>
                 <td>
             <a class="btn btn-sm vcd-btn-primary btn-rd" href="<?php echo base_url($this->uri->segment(1).'/edit-user/'.$rows->id_user)?>" role="button">

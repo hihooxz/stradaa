@@ -84,7 +84,7 @@ class Admin extends CI_Controller {
 			$this->form_validation->set_rules('email','Email','required|valid_email');
 			$this->form_validation->set_rules('full_name','full Name','required');
 			$this->form_validation->set_rules('permission','Permission','required');
-			$this->form_validation->set_rules('alamat','Address','required');
+			$this->form_validation->set_rules('address','Address','required');
 			$this->form_validation->set_rules('telephone','Telephone','required|numeric');
 
 			if(!$this->form_validation->run()){
@@ -105,13 +105,13 @@ class Admin extends CI_Controller {
 				redirect(base_url('user/manage-user'));
 
 				$this->form_validation->set_rules('username','Username','required');
-				$this->form_validation->set_rules('password','Password','');
-				$this->form_validation->set_rules('confirm_password','Confirm Password','matches[password]');
+				$this->form_validation->set_rules('password','Password');
+				$this->form_validation->set_rules('confirm','Confirm Password','matches[password]');
 				$this->form_validation->set_rules('email','Email','required|valid_email');
 				$this->form_validation->set_rules('full_name','full Name','required');
 				$this->form_validation->set_rules('permission','Permission','required');
-				$this->form_validation->set_rules('alamat','Address','required');
-				$this->form_validation->set_rules('telephone','Telephone','required|numeric');
+				$this->form_validation->set_rules('address','Address','');
+				$this->form_validation->set_rules('telephone','Telephone','numeric');
 
 			if(!$this->form_validation->run()){
 				$this->load->view('admin/index',$data);
