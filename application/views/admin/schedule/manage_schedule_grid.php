@@ -21,6 +21,29 @@
     <!-- Main content -->
     <section class="content">
       <div class="box container">
+        <div class="row" style="margin-bottom:10px ">
+          <form method="POST" action="">
+          <div class="col-md-3">
+          </div>
+          <div class="col-md-3">
+            <input type="text" name="search" class="form-control"><br />
+          </div>
+          <div class="col-md-3">
+            <?php
+              $options = array(
+                    'name_schedule'=>'Schedule Name',
+                    'subject'=> 'Subject',
+                    'date_schedule' => 'Date',
+                    'name_classroom' => 'Classroom'
+                  );
+              echo form_dropdown('by',$options,set_value('by'),"class='form-control'");
+            ?><br />
+          </div>
+          <div class="col-md-3">
+            <button type="submit"class="btn btn-default">Search</button><br />
+          </div>
+        </form>
+        </div>
       <?php
         if($this->session->userdata('permission') == 1){
       ?>

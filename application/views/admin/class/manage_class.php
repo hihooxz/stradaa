@@ -24,11 +24,26 @@
     <div class="box-header">
 
     </div>
-    <div class="col-md-3 col-sm-3 col-xs-3 pull-right">
-      <div class="input-group margin-bottom-sm form-group">
-        <span class="input-group-addon"><i class="fa fa-search fa-fw" aria-hidden="true"></i></span>
-        <input class="form-control" type="text" placeholder="search">
+    <div class="row" style="margin-bottom:10px">
+      <form method="POST" action="">
+      <div class="col-md-3">
       </div>
+      <div class="col-md-3">
+        <input type="text" name="search" class="form-control"><br />
+      </div>
+      <div class="col-md-3">
+        <?php
+          $options = array(
+                'class_name'=>'Class Name',
+                'status_class'=> 'Status'
+              );
+          echo form_dropdown('by',$options,set_value('by'),"class='form-control'");
+        ?><br />
+      </div>
+      <div class="col-md-3">
+        <button type="submit"class="btn btn-default">Search</button><br />
+      </div>
+    </form>
     </div>
      <!-- /.box-header -->
     <div class="box-body">
