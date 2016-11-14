@@ -34,6 +34,7 @@
                     'name_schedule'=>'Schedule Name',
                     'subject'=> 'Subject',
                     'date_schedule' => 'Date',
+                    'class_name' => 'Class',
                     'name_classroom' => 'Classroom'
                   );
               echo form_dropdown('by',$options,set_value('by'),"class='form-control'");
