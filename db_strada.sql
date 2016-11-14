@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 31, 2016 at 05:51 AM
+-- Generation Time: Nov 14, 2016 at 09:18 AM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.22
 
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `st_schedule` (
   `date_schedule` date NOT NULL,
   `date_insert` datetime NOT NULL,
   PRIMARY KEY (`id_schedule`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=42 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;
 
 --
 -- Dumping data for table `st_schedule`
@@ -119,7 +119,9 @@ INSERT INTO `st_schedule` (`id_schedule`, `id_class`, `id_classroom`, `id_subjec
 (38, 4, 3, 8, 'UTS', '07:00', '08:30', '2016-09-28', '2016-10-28 00:00:00'),
 (39, 4, 3, 5, 'UTS', '09:00', '10:30', '2016-09-28', '2016-10-28 00:00:00'),
 (40, 5, 3, 8, 'UTS', '07:00', '08:30', '2016-09-28', '2016-10-28 00:00:00'),
-(41, 5, 3, 13, 'UTS', '09:00', '10:30', '2016-09-28', '2016-10-28 00:00:00');
+(41, 5, 3, 13, 'UTS', '09:00', '10:30', '2016-09-28', '2016-10-28 00:00:00'),
+(42, 1, 2, 2, 'UTS', '07:00', '09:00', '2016-09-27', '2016-11-14 00:00:00'),
+(43, 1, 2, 1, 'UTS', '07:00', '08:30', '2016-09-28', '2016-11-14 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -220,7 +222,7 @@ CREATE TABLE IF NOT EXISTS `st_teacher` (
   `id_user` int(11) NOT NULL,
   `role` tinyint(1) NOT NULL COMMENT '1: Pengawas 1, 2: Pengawas 2',
   PRIMARY KEY (`id_teacher`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `st_teacher`
@@ -236,7 +238,11 @@ INSERT INTO `st_teacher` (`id_teacher`, `id_schedule`, `id_user`, `role`) VALUES
 (9, 28, 18, 1),
 (10, 28, 2, 2),
 (11, 42, 18, 1),
-(12, 42, 19, 1);
+(12, 42, 19, 1),
+(13, 27, 2, 1),
+(14, 30, 2, 1),
+(15, 30, 18, 2),
+(16, 43, 19, 1);
 
 -- --------------------------------------------------------
 
@@ -253,6 +259,10 @@ CREATE TABLE IF NOT EXISTS `st_user` (
   `date_input` datetime NOT NULL,
   `permission` tinyint(2) NOT NULL COMMENT '1 : Admin, 2 : Murid, 3 : Guru',
   `full_name` varchar(100) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `telephone` varchar(100) NOT NULL,
+  `birthday` date NOT NULL,
+  `gender` tinyint(1) NOT NULL COMMENT '1: Male, 2: Female',
   PRIMARY KEY (`id_user`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
@@ -260,26 +270,26 @@ CREATE TABLE IF NOT EXISTS `st_user` (
 -- Dumping data for table `st_user`
 --
 
-INSERT INTO `st_user` (`id_user`, `username`, `password`, `email`, `last_login`, `date_input`, `permission`, `full_name`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@strada.sch.id', '2016-10-25 00:00:00', '2016-10-25 00:00:00', 1, 'Admin Strada'),
-(2, 'johana', 'a8f5f167f44f4964e6c998dee827110c', 'johana@gmail.com', '2016-10-25 17:59:03', '2016-10-25 17:59:03', 2, 'Johana Juanita'),
-(3, '1601217360', 'a8f5f167f44f4964e6c998dee827110c', 'vallent@gmail.com', '2016-10-25 17:59:26', '2016-10-25 17:59:26', 3, 'Vallent'),
-(4, 'paula', 'a8f5f167f44f4964e6c998dee827110c', 'paula@gmail.com', '2016-10-25 18:29:51', '2016-10-25 18:29:51', 2, 'Paula Anderson'),
-(5, '161710006', '06a2f9a939add23c8ac302c8ba854226', 'agnes@strada.com', '2016-10-27 17:17:55', '2016-10-27 17:17:55', 3, 'Agnes Claudya Stefanus'),
-(6, '161710017', 'cbda7b7b1d5afd4632b4dd9ca662a31a', 'anastasia@strada.com', '2016-10-27 17:18:42', '2016-10-27 17:18:42', 3, 'Anastasia Dewanti Margono'),
-(7, '16170087', '1bf2c412ca7d8d2dbcbcf3833645b69d', 'fiona@gmail.com', '2016-10-27 17:19:28', '2016-10-27 17:19:28', 3, 'Fiona Felicia'),
-(8, '16710107', 'f6b73c5b7aaf079dbe2eecb27e964939', 'hindra@strada.com', '2016-10-27 17:20:13', '2016-10-27 17:20:13', 3, 'Hindra Pangadi Ghozali'),
-(9, '151610012', '92e46433a242763dde156c20524f5330', 'alvin@strada.com', '2016-10-27 17:22:22', '2016-10-27 17:22:22', 3, 'Alvin Septiawan'),
-(10, '161710047', 'ffbe69502f351a7a2e94bc681e0e3f00', 'cindy@strada.com', '2016-10-27 17:24:55', '2016-10-27 17:24:55', 3, 'Cindy Novianti Sastra'),
-(11, '151610072', '89cb2ad4502a94c540b2acbe47a6377a', 'elvira@strada.com', '2016-10-27 17:27:24', '2016-10-27 17:27:24', 3, 'Elvira'),
-(12, '15160056', '421b3c7bc8f2e039dd62fcd956aae197', 'daniel@strada.com', '2016-10-27 17:28:35', '2016-10-27 17:28:35', 3, 'Daniel'),
-(13, '151610134', '75e30e3c3d676ac6a060693545f9b603', 'kevin@strada.com', '2016-10-27 17:29:51', '2016-10-27 17:29:51', 3, 'Kevin'),
-(14, '141510150', '8defde767759e88303e3a3583125c405', 'kezia@strada.com', '2016-10-27 17:32:50', '2016-10-27 17:32:50', 3, 'Kezia Manuela'),
-(15, '141510194', '5acb2485d07f278d83863c8567db2858', 'niken@strada.com', '2016-10-27 17:33:12', '2016-10-27 17:33:12', 3, 'Niken'),
-(16, '141510151', '94a4e96efff6602009f1a4a323324efe', 'kristian@strada.com', '2016-10-27 17:34:48', '2016-10-27 17:34:48', 3, 'Kristian Harijadi'),
-(17, '141510174', '2b0aef3a41389c2e92402b7d61682335', 'marina@strada.com', '2016-10-27 17:35:14', '2016-10-27 17:35:14', 3, 'Marina'),
-(18, 'radit', 'a8f5f167f44f4964e6c998dee827110c', 'radit@strada.com', '2016-10-29 08:48:06', '2016-10-29 08:48:06', 2, 'Radit'),
-(19, 'fredericus', 'a8f5f167f44f4964e6c998dee827110c', 'fredericus@strada.com', '2016-10-29 08:48:38', '2016-10-29 08:48:38', 2, 'Fredericus Joko Wicaksono');
+INSERT INTO `st_user` (`id_user`, `username`, `password`, `email`, `last_login`, `date_input`, `permission`, `full_name`, `address`, `telephone`, `birthday`, `gender`) VALUES
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@strada.sch.id', '2016-10-25 00:00:00', '2016-10-25 00:00:00', 1, 'Admin Strada', 'Grogol grogol dekat trisakti trisaktiku, indonesiaku hebat sekali, bareng sama mall taman anggrek de', '081238139812', '0000-00-00', 0),
+(2, 'johana', 'a8f5f167f44f4964e6c998dee827110c', 'johana@gmail.com', '2016-10-25 17:59:03', '2016-10-25 17:59:03', 2, 'Johana Juanita', '', '', '0000-00-00', 0),
+(3, '1601217360', 'a8f5f167f44f4964e6c998dee827110c', 'vallent@gmail.com', '2016-10-25 17:59:26', '2016-10-25 17:59:26', 3, 'Vallent', '', '', '0000-00-00', 0),
+(4, 'paula', 'a8f5f167f44f4964e6c998dee827110c', 'paula@gmail.com', '2016-10-25 18:29:51', '2016-10-25 18:29:51', 2, 'Paula Anderson', '', '', '0000-00-00', 0),
+(5, '161710006', '06a2f9a939add23c8ac302c8ba854226', 'agnes@strada.com', '2016-10-27 17:17:55', '2016-10-27 17:17:55', 3, 'Agnes Claudya Stefanus', 'jakarta', '082309123', '0000-00-00', 0),
+(6, '161710017', 'cbda7b7b1d5afd4632b4dd9ca662a31a', 'anastasia@strada.com', '2016-10-27 17:18:42', '2016-10-27 17:18:42', 3, 'Anastasia Dewanti Margono', '', '', '0000-00-00', 0),
+(7, '16170087', '1bf2c412ca7d8d2dbcbcf3833645b69d', 'fiona@gmail.com', '2016-10-27 17:19:28', '2016-10-27 17:19:28', 3, 'Fiona Felicia', '', '', '0000-00-00', 0),
+(8, '16710107', 'f6b73c5b7aaf079dbe2eecb27e964939', 'hindra@strada.com', '2016-10-27 17:20:13', '2016-10-27 17:20:13', 3, 'Hindra Pangadi Ghozali', '', '', '0000-00-00', 0),
+(9, '151610012', 'a8f5f167f44f4964e6c998dee827110c', 'alvin@strada.com', '2016-10-27 17:22:22', '2016-10-27 17:22:22', 3, 'Alvin Septiawan', '', '', '0000-00-00', 0),
+(10, '161710047', 'ffbe69502f351a7a2e94bc681e0e3f00', 'cindy@strada.com', '2016-10-27 17:24:55', '2016-10-27 17:24:55', 3, 'Cindy Novianti Sastra', '', '', '0000-00-00', 0),
+(11, '151610072', '89cb2ad4502a94c540b2acbe47a6377a', 'elvira@strada.com', '2016-10-27 17:27:24', '2016-10-27 17:27:24', 3, 'Elvira', '', '', '0000-00-00', 0),
+(12, '15160056', '421b3c7bc8f2e039dd62fcd956aae197', 'daniel@strada.com', '2016-10-27 17:28:35', '2016-10-27 17:28:35', 3, 'Daniel', '', '', '0000-00-00', 0),
+(13, '151610134', '75e30e3c3d676ac6a060693545f9b603', 'kevin@strada.com', '2016-10-27 17:29:51', '2016-10-27 17:29:51', 3, 'Kevin', '', '', '0000-00-00', 0),
+(14, '141510150', '8defde767759e88303e3a3583125c405', 'kezia@strada.com', '2016-10-27 17:32:50', '2016-10-27 17:32:50', 3, 'Kezia Manuela', '', '', '0000-00-00', 0),
+(15, '141510194', '5acb2485d07f278d83863c8567db2858', 'niken@strada.com', '2016-10-27 17:33:12', '2016-10-27 17:33:12', 3, 'Niken', '', '', '0000-00-00', 0),
+(16, '141510151', '94a4e96efff6602009f1a4a323324efe', 'kristian@strada.com', '2016-10-27 17:34:48', '2016-10-27 17:34:48', 3, 'Kristian Harijadi', '', '', '0000-00-00', 0),
+(17, '141510174', '2b0aef3a41389c2e92402b7d61682335', 'marina@strada.com', '2016-10-27 17:35:14', '2016-10-27 17:35:14', 3, 'Marina', '', '', '0000-00-00', 0),
+(18, 'radit', 'a8f5f167f44f4964e6c998dee827110c', 'radit@strada.com', '2016-10-29 08:48:06', '2016-10-29 08:48:06', 2, 'Radit', '', '', '0000-00-00', 0),
+(19, 'fredericus', 'a8f5f167f44f4964e6c998dee827110c', 'fredericus@strada.com', '2016-10-29 08:48:38', '2016-10-29 08:48:38', 2, 'Fredericus Joko Wicaksono', 'Tangerang', '081241252555', '1988-11-23', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

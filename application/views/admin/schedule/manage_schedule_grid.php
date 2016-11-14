@@ -113,9 +113,16 @@
                     <?php
                     $pengawas = $this->mschedule->fetchTeacher($rows->id_schedule);
                     if($pengawas!=FALSE){
-                      foreach ($pengawas as $rows) {
+                      $i = 0;
+                      foreach ($pengawas as $rows2) {
                         ?>
-                        <td><?php echo $rows->full_name?></td>
+                        <td><?php echo $rows2->full_name?></td>
+                        <?php
+                        $i++;
+                      }
+                      if($i==1){
+                        ?>
+                        <td>No Data</td>
                         <?php
                       }
                     }
