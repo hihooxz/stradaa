@@ -176,7 +176,7 @@ class Mschedule extends CI_Model {
 			}
 			else return FALSE;
 		}
-	function fetchScheduleStudent($id){			
+	function fetchScheduleStudent($id){
 			$this->db->join('class','schedule.id_class = class.id_class');
 			$this->db->join('student','student.id_class = class.id_class');
 			$this->db->join('subject','schedule.id_subject = subject.id_subject');
@@ -190,7 +190,7 @@ class Mschedule extends CI_Model {
 			}
 			else return FALSE;
 	}
-	function fetchScheduleTeacher($id){			
+	function fetchScheduleTeacher($id){
 			$this->db->join('class','schedule.id_class = class.id_class');
 			$this->db->join('teacher','teacher.id_schedule = schedule.id_schedule');
 			$this->db->join('subject','schedule.id_subject = subject.id_subject');
