@@ -1,0 +1,218 @@
+/* CSS Document By Zuhdi Robbani */
+body{
+	font-family: 'Roboto Condensed', sans-serif;
+	color:#333;
+}
+.vcd-topbar{
+	background-color: #9c66b2;
+	padding: 5px;
+	color:#fff;
+	border-bottom: 1px solid #e0e0e0;
+}
+.vcd-navbar{
+	border-bottom: 1px solid #e0e0e0;
+}
+.vcd-navbar h1{
+	font-family: 'Vollkorn', serif;
+	color:#333;
+	font-size: 26px;
+}
+.vcd-navbar b{
+	color: #9c66b2;
+	font-size: 30px;
+}
+.vcd-navbar a{
+	color:#333;
+	font-family: 'Vollkorn', serif;
+	font-size: 18px;
+	margin: 10px 20px 0 0;
+}
+.navbar-default{
+	background-color:#fff;
+	border:none;
+}
+.vcd-carousel{
+}
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 20px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+.vcd-btn-primary{
+	color: #fff;
+    background-color: #9c66b2;
+    border-color: #9c66b2;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #fff;
+    background-color: #9c66b2;
+}
+.vcd-about{
+	height: 50%;
+	vertical-align: middle;
+	padding: 50px 0
+}
+
+.vcd-about h1{
+	
+	color:#333;
+	font-size: 72px;
+	margin-top: 5%;
+}
+.vcd-contact{
+	height: 50%;
+	vertical-align: middle;
+	padding: 3% 0;
+}
+.vcd-contact h1{
+	
+	color:#333;
+	font-size: 72px;
+	margin-top: 5%;
+}
+@media (min-width: 770px) {
+	.vcd-about h1{
+	font-family: 'Vollkorn', serif;
+	color:#333;
+	font-size: 72px;
+	margin-top: 5%;
+	border-right: 1px solid #e0e0e0;
+	}
+	.vcd-contact h1{
+	font-family: 'Vollkorn', serif;
+	color:#333;
+	font-size: 72px;
+	margin-top: 5%;
+	border-left: 1px solid #e0e0e0;
+	}
+}
+.vcd-about h1 b{
+	color:#9c66b2;	
+}
+.vcd-about p{
+	margin-top: 5%;
+}
+.vcd-contact h1 b{
+	color:#9c66b2;	
+}
+.vcd-contact p{
+	margin-top: 5%;
+}
+.vcd-contact-us{
+	padding-top: 10%;
+}
+@media screen and (min-width: 360px) {
+    #vcd-banner{
+		padding: 20px 0px 0px 0px;
+	    overflow: hidden;
+	    position: relative;
+	    height: auto;
+	}
+}
+.vcd-banner{
+	padding: 20px 0px 0px 0px;
+    overflow: hidden;
+    position: relative;
+    height: 300px;
+
+}
+.vcd-banner .overlay-image{
+	border-top: 1px solid #e0e0e0;
+	border-bottom: 1px solid #e0e0e0;
+	margin: 20px 0px 0px 0px;
+    position: absolute;
+    display: block;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(97, 97, 97, 0.5);
+}
+.vcd-banner .play-button-container {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    font-size: 4vw;
+    color: white;
+}
+.vcd-banner .play-button-container b{
+	color:#333;
+	font-family: 'Vollkorn', serif;
+}
+.vcd-package{
+	margin: 10px 0;
+}
+.vcd-package h2{
+	color:#333;
+	font-family: 'Vollkorn', serif;
+	text-align: center;
+	font-size: 35px;
+	padding-bottom: 5px;
+}
+.vcd-package h2 b{
+	color:#9c66b2;	
+}
+
+.vcd-package h2 c{
+	color:#9c66b2;	
+}
+.vcd-package .price-list{
+	color:#9c66b2;
+	font-family: 'Roboto Condensed', sans-serif;
+	border: 1px solid #9c66b2;
+}
+.vcd-package td{
+	color:#333;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 12px;
+}
+.vcd-package .list-name{
+	border-bottom: 1px solid #F1F1F1;
+	margin: 0 40px;
+}
+.vcd-gallery b{
+	color: #9c66b2;
+	font-size: 35	px;
+}
+.vcd-gallery h2{
+	color:#333;
+	font-family: 'Vollkorn', serif;
+	text-align: center;
+	font-size: 35px;
+	padding-bottom: 5px;
+}
+#vcd-box {
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    }
+
+#vcd-bottom-footer {
+    background: #1E1E20;
+    color: #fff;
+    font-family: 'Muli', sans-serif;
+    height: 100px;
+    padding: 20px 0 0 0;
+}
+#vcd-bottom-footer a {
+    color: #fff;
+}

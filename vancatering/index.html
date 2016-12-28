@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VanCateringDecoration</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn|Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="default.css">
+    <link rel="stylesheet" type="text/css" href="fa/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="vcd-topbar">
+		<div class="container">
+			<div class="col-md-3">
+				<i class="fa fa-map-marker fa-fw"></i> Kalideres, Jakarta Barat
+			</div>
+			<div class="col-md-3 col-md-offset-6">
+				<i class="fa fa-envelope fa-fw"></i> hello@vancateringdecoration.com
+			</div>
+		</div>
+	</div>
+	<div class="vcd-navbar">
+		  	<div class="container">
+				<div class="col-md-4">
+					<h1><b>VAN</b> Catering <b>&</b> Decoration</h1>
+				</div>
+				<div class="col-md-8 col-xs-12 col-sm-12">
+					<nav class="navbar navbar-default ">
+						<div class="nav menu sf-menu responsive-menu superfish sf-js-enabled">
+					      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#vcd-collapse-nav" aria-expanded="false">
+					        <span class="sr-only">Toggle navigation</span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					      </button>
+					    </div>
+						<div class="collapse navbar-collapse" id="vcd-collapse-nav">
+							<ul class="nav navbar-nav">
+						        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+						        <li><a href="#about">About</a></li>
+						        <li><a href="#package">Catering</a></li>
+						        <li><a href="#decoration">Decoration</a></li>
+						        <li><a href="#gallery">Gallery</a></li>
+						        <li><a href="#contact">Contact Us</a></li>
+						        <!-- <li class="dropdown">
+						          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+						          <ul class="dropdown-menu">
+						            <li><a href="#">Action</a></li>
+						            <li><a href="#">Another action</a></li>
+						            <li><a href="#">Something else here</a></li>
+						            <li role="separator" class="divider"></li>
+						            <li><a href="#">Separated link</a></li>
+						            <li role="separator" class="divider"></li>
+						            <li><a href="#">One more separated link</a></li>
+						          </ul>
+						        </li> -->
+						      </ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+	</div>
+</nav>
+	<div class="vcd-carousel">
+		<!-- Carousel
+	    ================================================== -->
+	    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+	      <!-- Indicators -->
+	      <ol class="carousel-indicators">
+	        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+	        <li data-target="#myCarousel" data-slide-to="1"></li>
+	        <li data-target="#myCarousel" data-slide-to="2"></li>
+	      </ol>
+	      <div class="carousel-inner" role="listbox">
+	        <div class="item active">
+	          <img class="first-slide" src="images/1.jpg" alt="First slide">
+	          <div class="container">
+	            <div class="carousel-caption">
+	              <h1>VENITA ARTHA NUGRAHA CATERING</h1>
+	              <p>Specialist tent proveder, Event Organizer, Decoration, Launching, Exhibition, Ceremony, VCS (Venita Catering Service ), Standing Air Conditioner, Wedding Organizer, etc.</p>
+	              <p><a class="btn btn-lg vcd-btn-primary" href="#" role="button">Sign up today</a></p>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="item">
+	          <img class="second-slide" src="images/2.jpg" alt="Second slide">
+	          <div class="container">
+	            <div class="carousel-caption">
+	              <h1>VENITA ARTHA NUGRAHA CATERING</h1>
+	              <p>Specialist tent proveder, Event Organizer, Decoration, Launching, Exhibition, Ceremony, VCS (Venita Catering Service ), Standing Air Conditioner, Wedding Organizer, etc.</p>
+	              <p><a class="btn btn-lg vcd-btn-primary" href="#" role="button">Learn more</a></p>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="item">
+	          <img class="third-slide" src="images/3.jpg" alt="Third slide">
+	          <div class="container">
+	            <div class="carousel-caption">
+	              <h1>VENITA ARTHA NUGRAHA CATERING</h1>
+	              <p>Specialist tent proveder, Event Organizer, Decoration, Launching, Exhibition, Ceremony, VCS (Venita Catering Service ), Standing Air Conditioner, Wedding Organizer, etc.</p>
+	              <p><a class="btn btn-lg vcd-btn-primary" href="#" role="button">Browse gallery</a></p>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+	        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	        <span class="sr-only">Previous</span>
+	      </a>
+	      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+	        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	        <span class="sr-only">Next</span>
+	      </a>
+	    </div><!-- /.carousel -->
+	</div>
+<section id="about">
+	<div class="vcd-about">
+		<div class="container">
+			<div class="col-sm-6 col-md-6 col-xs-12 text-center">
+				<h1>ABOUT <b>US</b></h1>
+			</div>
+			<div class="col-sm-6 col-md-6 col-xs-12 text-center">
+				<p>
+					CV.VENITA ARTHA NUGRAHA CATERING Specialist tent proveder, Event Organizer, Decoration, Launching, Exhibition, Ceremony, VCS (Venita Catering Service ), Standing Air Conditioner, Wedding Organizer, etc
+				</p>
+				<a class="btn btn-sm vcd-btn-primary" href="#" role="button">Read More</a>
+			</div>
+		</div>
+	</div>
+	<div class="vcd-banner">
+		<img src="images/wedding5.jpg" alt="Img" class="img-responsive">
+		<div class="overlay-image"></div>
+		<div class="play-button-container">
+			Celebrate Your <b>Special</b> Day <br />
+			With <b>Special</b> Food
+		</div>
+	</div>
+</section>
+	<div class="vcd-package">
+		<section id="package">
+		<div class="container">
+			<h2>Catering <b>Package</b></h2><br/>
+			<div class="row">
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<div id="vcd-box">
+						<img src="images/4.jpg" alt=Img class="img-responsive"></img>
+					</div>
+					<div class="price-list text-center">
+						<h2 style="margin:0;padding:0;"><c>PAKET A</c></h2>
+						<strong>Rp 37.000.000</strong>
+
+					<div class="list-name text-center">
+						<table class="table table-striped">
+						<tbody>
+							<tr><td>Menu buffe utama 300 porsi paket A</td></tr>
+							<tr><td>Menu Gubug 6</td></tr>
+							<tr>
+								<td>
+									Menu Utama 300 porsi<br />
+										Nasi Putih
+										Nasi goreng sosis / Nasi goreng hijau
+										Daging Paprika
+										Ikan Kakap filet Asam Manis
+										Soun Cah Cabai Hijau / Capcay
+										Sop Kimlo / Sop bakso
+										Kerupuk
+										Air Mineral
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Menu Gubug<br />
+										Ice Cream 1 Ball,
+										Siomay / Pempek 100 porsi,
+										Sate Ayam 100 porsi,
+										Bakso 150 porsi,
+										Bubur Candil 100 porsi,
+										Nasi Bakar 100 porsi
+								</td>
+							</tr>
+							<tr>
+								<td>
+										Dessert <br />
+											Puding,
+											Aneka Kue,
+											Soft Drink,
+											Buah Potong
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Dekorasi Catering <br />
+									Dekorasi meja Buffe,
+									Dekorasi Meja Dessert,
+									Standing Flower 4 unit,
+									Gazebo jalan / Pragola,
+									Ice Carving + Ice Try,
+									Umbul-umbul 1 pasang,
+									Karpet Jalan
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Dekorasi Pelaminan<br />
+									Pelaminan 1 set,
+									Bunga Pelaminan 5 meter,
+									Mini Garden,
+									Panggung Pelaminan ( jika belum di sediakan di gedung / di rumah )
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Tata Rias dan Busana <br />
+									Rias Pengantin dan 2x Ganti Busana ( termasuk akad nikah),
+									Rias dan Busana 2 pasang pendamping ( Orang Tua ),
+									Rias dan Busana Penerima Tamu 4 orang,
+								</td>
+							</tr>
+							<tr>
+								<td>
+										Foto & Video Shoting <br />
+										2 disc DVD
+										1 Album 10 sheet (variasi Benang )
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Pelengkap <br />
+									Buku Tamu dan Spidol,
+									Tempat Ampau ( di pinjamkan )
+								</td>
+							</tr>
+							<tr>
+								<td>
+							Bonus <br />
+							MC Resepsi,
+							50 porsi untuk buffe pengantin,
+							Organ tunggal
+						</td>
+					</tr>
+						</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<div id="vcd-box">
+						<img src="images/5.jpg" alt=Img class="img-responsive"></img>
+					</div>
+					<div class="price-list text-center">
+						<h2 style="margin:0;padding:0;"><c>Paket B </c></h2>
+						<strong>Rp 43.000.000</strong>
+
+					<div class="list-name text-center">
+						<table class="table table-striped">
+						<tbody>
+							<tr><td>Menu buffe utama 350 porsi paket B </td></tr>
+							<tr><td>Menu Gubug 7</td></tr>
+							<tr>
+								<td>
+									Menu Utama 350 porsi<br />
+									Nasi Putih,
+Nasi goreng sosis / Nasi goreng hijau / Nasi goreng bakso, ayam,
+Daging Paprika / Rendang / Rolade,
+Ayam Goreng Rica –Rica / Ayam goreng lengkuas,
+Sambal Goreng Ati / Krecek,
+Capcay / Cah ayam jamur,
+Sop Kimlo / Sop telur puyuh,
+Kerupuk,
+Air Mineral
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Menu Gubug<br />
+									Ice Cream 1 Ball / aneka Es,
+Siomay 150 porsi / Pempek,
+Sate Ayam 150 porsi / Sate Padang,
+Bakso 150 porsi / bakso malang,
+Zupa Sup 100 porsi,
+Aneka soto 150 porsi
+								</td>
+							</tr>
+							<tr>
+								<td>
+										Dessert <br />
+										Puding 3 rasa
+										Aneka Kue,
+										Soft Drink,
+										Buah Potong
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Dekorasi Catering <br />
+									Dekorasi meja Buffe,
+Dekorasi Meja Dessert,
+Standing Flower 4 unit,
+Gazebo jalan / Pragola,
+Ice Carving + Ice Try,
+Umbul-umbul 1 pasang,
+Karpet Jalan,
+Bunga untuk Meja Penerima Tamu
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Dekorasi Pelaminan<br />
+									Pelaminan 1 set
+Bunga Pelaminan 6 meter,
+Mini Garden,
+Panggung Pelaminan ( jika belum di sediakan di gedung / di rumah ),
+Karpet Jalan,
+Gazebo Jalan,
+Pragola 3 Standing Flower Untuk Pelaminan,
+Pragola 4 Standing Flower Untuk Jalan
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Tata Rias dan Busana <br />
+									Rias Pengantin dan 2x Ganti Busana ( termasuk akad nikah),
+Rias dan Busana 2 pasang pendamping ( Orang Tua ),
+Rias dan Busana Penerima Tamu 4 orang,
+Rias dan Busana Among Tamu 4 Pasang
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+										Foto & Video Shoting <br />
+										2 disc DVD,
+1 Album 10 sheet ( variasi benang )
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Pelengkap <br />
+									Buku Tamu dan Spidol,
+									Tempat Ampau ( di pinjamkan )
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+							Bonus <br />
+							MC Resepsi,
+Cucuk Lampah / Lengser,
+50 porsi untuk buffe pengantin,
+Organ tunggal,
+Sarapan Soto Ayam 50 porsi
+
+						</td>
+					</tr>
+						</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<div id="vcd-box">
+						<img src="images/5.jpg" alt=Img class="img-responsive"></img>
+					</div>
+					<div class="price-list text-center">
+						<h2 style="margin:0;padding:0;"><c>Paket B 2</c></h2>
+						<strong>Rp 47.000.000</strong>
+
+					<div class="list-name text-center">
+						<table class="table table-striped">
+						<tbody>
+							<tr><td>Menu buffe utama 400 porsi paket B 2</td></tr>
+							<tr><td>Menu Gubug 8</td></tr>
+							<tr>
+								<td>
+									Menu Utama 400 porsi<br />
+										Nasi Putih,
+										Nasi goreng sosis / Nasi goreng Hijau,
+										Daging Paprika,
+										Ayam Goreng Rica -Rica,
+										Sambal Goreng Ati / Krecek,
+										Asinan Pengantin,
+										Sop Kimlo,
+										Kerupuk,
+										Air Mineral
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Menu Gubug<br />
+									Ice Cream 1 Ball / Aneka es,
+									Siomay 150 porsi / Pempek,
+									Sate Ayam 150 porsi / Sate Padang,
+									Bakso 150 porsi / Bakso malang,
+									Bubur Candil 100 porsi,
+									Nasi Bakar 100 porsi,
+									Zupa Zup 100 porsi,
+									Aneka Soto 150 porsi
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+										Dessert <br />
+										Puding 3 rasa,
+Aneka Kue,
+Soft Drink,
+Buah Potong
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Dekorasi Catering <br />
+									Dekorasi meja Buffe,
+Dekorasi Meja Dessert,
+Standing Flower 6 unit,
+Gazebo jalan / Pragola,
+Ice Carving + Ice Try,
+Umbul-umbul 1 pasang,
+Karpet Jalan,
+Bunga untuk Meja Penerima Tamu,
+Meja Consul
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Dekorasi Pelaminan<br />
+									Pelaminan 1 set,
+									Bunga Pelaminan 7 meter,
+									Mini Garden,
+									Panggung Pelaminan ( jika belum di sediakan di gedung / di rumah)
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Tata Rias dan Busana <br />
+									Rias Pengantin dan 2x Ganti Busana ( termasuk akad nikah),
+Rias dan Busana 2 pasang pendamping ( Orang Tua ),
+Rias dan Busana Penerima Tamu 4 orang,
+Rias dan Busana Among Tamu 4 pasang,
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+										Foto & Video Shoting <br />
+										2 disc DVD,
+1 Album 15 sheet ( Colase )
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Pelengkap <br />
+									Buku Tamu dan Spidol,
+Tempat Ampau ( di pinjamkan )
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+							Bonus <br />
+							MC Resepsi,
+Cucuk Lampah / Lengser,
+50 porsi untuk buffe pengantin,
+Organ tunggal,
+Sarapan Soto Ayam 50 porsi
+
+						</td>
+					</tr>
+						</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<div id="vcd-box">
+						<img src="images/5.jpg" alt=Img class="img-responsive"></img>
+					</div>
+					<div class="price-list text-center">
+						<h2 style="margin:0;padding:0;"><c>Paket C</c></h2>
+						<strong>Rp 57.000.000</strong>
+
+					<div class="list-name text-center">
+						<table class="table table-striped">
+						<tbody>
+							<tr><td>Menu buffe utama 500 porsi paket C</td></tr>
+							<tr><td>Menu Gubug 9</td></tr>
+							<tr>
+								<td>
+									Menu Utama 500 porsi<br />
+									Nasi Putih,
+									Nasi Goreng Sea food / Nasi goreng Hijau ,
+									Ayam Goreng Rica –Rica / Aneka Ayam,
+									Ikan kakap Filet Asam Manis,
+									Asinan Pengantin,
+									Capcay / Cah Brokoli,
+									Krecek / sambal goreng kentang ati,
+									Kerupuk,
+									Air Mineral
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Menu Gubug<br />
+									Ice Cream 1 Ball / Aneka es
+									Siomay 150 porsi / Pempek
+									Sate Ayam 150 porsi / Sate Padang
+									Bakso 150 porsi / Bakso malang
+									Bubur Candil 100 porsi
+									Nasi Bakar 150 porsi
+									Zupa Zup 150 porsi
+									Aneka Soto 150 porsi
+									Kambing Guling 2 ekor / 120 porsi
+								</td>
+							</tr>
+							<tr>
+								<td>
+										Dessert <br />
+										Puding 3 rasa
+										Aneka Kue
+										Soft Drink
+										Buah Potong
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Dekorasi Catering <br />
+									Dekorasi meja Buffe
+									Dekorasi Meja Dessert
+									Standing Flower 6 unit
+									Gazebo jalan / Pragola
+									Ice Carving + Ice Try
+									Umbul-umbul 1 pasang
+									Karpet Jalan
+									Bunga untuk Meja Penerima Tamu
+									Pembatas untuk VIP
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Dekorasi Pelaminan<br />
+									Pelaminan 1 set
+									Bunga Pelaminan 7 meter
+									Mini Garden
+									Panggung Pelaminan ( jika belum di sediakan di gedung / di rumah )
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Tata Rias dan Busana <br />
+									Rias Pengantin dan 2x Ganti Busana ( termasuk akad nikah)
+									Rias dan Busana 2 pasang pendamping ( Orang Tua )
+									Rias dan Busana Penerima Tamu 4 orang
+									Rias dan Busana Among Tamu 4 pasang
+								</td>
+							</tr>
+							<tr>
+								<td>
+										Foto & Video Shoting <br />
+										2 disc DVD
+										1 Album 10 Sheet ( Colase )
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Pelengkap <br />
+									Buku Tamu dan Spidol,
+									Tempat Ampau ( di pinjamkan )
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+							Bonus <br />
+							MC Resepsi,
+							Cucuk Lampah / Lengser,
+							50 porsi untuk buffe pengantin,
+							Organ tunggal,
+							Sarapan Soto Ayam 70 porsi
+						</td>
+					</tr>
+						</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<div id="vcd-box">
+						<img src="images/4.jpg" alt=Img class="img-responsive"></img>
+					</div>
+					<div class="price-list text-center">
+						<h2 style="margin:0;padding:0;"><c>PAKET C2</c></h2>
+						<strong>Rp 64.000.000</strong>
+
+					<div class="list-name text-center">
+						<table class="table table-striped">
+						<tbody>
+							<tr><td>Menu buffe utama 600 porsi paket C2</td></tr>
+							<tr><td>Menu Gubug 10</td></tr>
+							<tr>
+								<td>
+									Menu Utama 600 porsi<br />
+									Nasi Putih
+									Nasi Goreng Sea food / Nasi Goreng Hijau
+									Rendang
+									Aneka Ayam
+									Aneka Ikan
+									Asinan Pengantin
+									Cah Ayam Jamur
+									Capcay / cah Brokoli / kacang mede
+									Krecek / Sambal Goreng Kentang Ati
+									Kerupuk
+									Air Mineral
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Menu Gubug<br />
+									Ice Cream 1 Ball / Aneka es
+Siomay 150 porsi / Pempek
+Sate Ayam 150 porsi / Sate Padang
+Bakso 150 porsi / Bakso malang
+Bubur Candil 100 porsi
+Nasi Bakar 150 porsi
+Zupa Zup 150 porsi
+Aneka Soto 150 porsi
+Kambing Guling 2 ekor / 120 porsi
+Martabak / mie Ayam
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+										Dessert <br />
+											Puding,
+											Aneka Kue,
+											Soft Drink/Jus,
+											Buah Potong
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Dekorasi Catering <br />
+									Dekorasi meja Buffe
+Dekorasi Meja Dessert
+Standing Flower 8 unit
+Gazebo jalan / Pragola
+Ice Carving + Ice Try
+Umbul-umbul 1 pasang
+Karpet Jalan
+Bunga untuk Meja Penerima Tamu
+Pembatas untuk VIP
+Gazebo untuk Meja Penerima Tamu
+Meja Consul
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Dekorasi Pelaminan<br />
+									Pelaminan 1 set
+Bunga Pelaminan 7 meter
+Standing flower untuk Pelaminan
+Mini Garden
+Panggung Pelaminan ( jika belum di sediakan di gedung / di rumah )
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Tata Rias dan Busana <br />
+									Rias Pengantin dan 2x Ganti Busana ( termasuk akad nikah)
+Rias dan Busana 2 pasang pendamping ( Orang Tua )
+Rias dan Busana Penerima Tamu 4 orang
+Rias dan Busana Among Tamu 6 Pasang
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+										Foto & Video Shoting <br />
+										2 disc DVD
+										1 Album 10 sheet
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Pelengkap <br />
+									Buku Tamu dan Spidol,
+									Tempat Ampau ( di pinjamkan )
+								</td>
+							</tr>
+							<tr>
+								<td>
+							Bonus <br />
+							MC Resepsi,
+							50 porsi untuk buffe pengantin,
+							Organ tunggal
+							Baju Perdana
+						</td>
+					</tr>
+						</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<div id="vcd-box">
+						<img src="images/5.jpg" alt=Img class="img-responsive"></img>
+					</div>
+					<div class="price-list text-center">
+						<h2 style="margin:0;padding:0;"><c>Paket D</c></h2>
+						<strong>Rp 71.000.000</strong>
+
+					<div class="list-name text-center">
+						<table class="table table-striped">
+						<tbody>
+							<tr><td>Menu buffe utama 700 porsi paket D</td></tr>
+							<tr><td>Menu Gubug 11</td></tr>
+							<tr>
+								<td>
+									Menu Utama 700 porsi<br />
+									Nasi Putih,
+									Nasi Goreng Sea food,
+									Rendang,
+									Rolade,
+									Ayam Goreng Rica -Rica,
+									Cah Brokoli,
+									Sambal Goreng Kentang Ati,
+									Capcay,
+									Krecek,
+									Kerupuk,
+									Air Mineral
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Menu Gubug<br />
+									Ice Cream 2 Ball / Aneka es,
+Siomay 150 porsi / Pempek,
+Sate Ayam 150 porsi / Sate Padang,
+Bakso 150 porsi / Bakso malang,
+Bubur Candil 100 porsi,
+Nasi Bakar 150 porsi,
+Zupa Zup 150 porsi,
+Aneka Soto 150 porsi,
+Kambing Guling 2 ekor / 120 porsi,
+Martabak / mie Ayam,
+Nasi Gudeg / Nasi Kapau / Nasi Kebuli
+								</td>
+							</tr>
+							<tr>
+								<td>
+										Dessert <br />
+										Puding 3 rasa,
+										Aneka Kue,
+										Soft Drink,
+										Buah Potong,
+										Juz
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Dekorasi Catering <br />
+									Dekorasi meja Buffe,
+	Dekorasi Meja Dessert,
+	Standing Flower 8 unit,
+	Gazebo jalan / Pragola,
+	Ice Carving + Ice Try,
+	Umbul-umbul 1 pasang
+	Karpet Jalan,
+	Bunga untuk Meja Penerima Tamu,
+	Pembatas untuk VIP,
+	Gazebo untuk Meja Penerima Tamu,
+	Meja Consul
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Dekorasi Pelaminan<br />
+									Pelaminan 1 set,
+Bunga Pelaminan 9 meter,
+Standing flower untuk Pelaminan,
+Mini Garden,
+Panggung Pelaminan ( jika belum di sediakan di gedung / di rumah )
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Tata Rias dan Busana <br />
+									Rias Pengantin dan 2x Ganti Busana ( termasuk akad nikah),
+Rias dan Busana 2 pasang pendamping ( Orang Tua ),
+Rias dan Busana Penerima Tamu 4 orang,
+Rias dan Busana Among Tamu 8 pasang
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+										Foto & Video Shoting <br />
+										2 disc DVD,
+										1 Album 10 sheet ( Colase ),
+										Foto prawedding indoor ( cetak foto 2 bingkai)
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Pelengkap <br />
+									Buku Tamu dan Spidol,
+									Tempat Ampau ( di pinjamkan )
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+							Bonus <br />
+							MC Resepsi,
+							Cucuk Lampah / Lengser,
+							50 porsi untuk buffe pengantin,
+							Organ tunggal
+						</td>
+					</tr>
+						</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+			</div> <!-- end of row -->
+			<div class="row">
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<div id="vcd-box">
+						<img src="images/5.jpg" alt=Img class="img-responsive"></img>
+					</div>
+					<div class="price-list text-center">
+						<h2 style="margin:0;padding:0;"><c>Paket D 2</c></h2>
+						<strong>Rp 73.000.000</strong>
+
+					<div class="list-name text-center">
+						<table class="table table-striped">
+						<tbody>
+							<tr><td>Menu buffe utama 700 porsi paket C</td></tr>
+							<tr><td>Menu Gubug 11</td></tr>
+							<tr>
+								<td>
+									Menu Utama 700 porsi<br />
+									Nasi Putih,
+Nasi Goreng Sea food ,
+Rendang,
+Rolade,
+Ayam Goreng Rica -Rica,
+Cah Brokoli,
+Sambal Goreng Kentang Ati,
+Capcay,
+Krecek,
+Kerupuk,
+Air Mineral
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Menu Gubug<br />
+									Ice Cream 1 Ball / Aneka es
+									Siomay 150 porsi / Pempek
+									Sate Ayam 150 porsi / Sate Padang
+									Bakso 150 porsi / Bakso malang
+									Bubur Candil 100 porsi
+									Nasi Bakar 150 porsi
+									Zupa Zup 150 porsi
+									Aneka Soto 150 porsi
+									Kambing Guling 2 ekor / 120 porsi
+								</td>
+							</tr>
+							<tr>
+								<td>
+										Dessert <br />
+										Puding 3 rasa
+										Aneka Kue
+										Soft Drink
+										Buah Potong
+										Juz
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Dekorasi Catering <br />
+									Dekorasi meja Buffe,
+Dekorasi Meja Dessert,
+Standing Flower 8 unit,
+Gazebo jalan / Pragola,
+Ice Carving + Ice Try,
+Umbul-umbul 1 pasang,
+Karpet Jalan,
+Bunga untuk Meja Penerima Tamu,
+Pembatas untuk VIP,
+Gazebo untuk Meja Penerima Tamu,
+Meja Consul
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Dekorasi Pelaminan<br />
+									Pelaminan 1 set,
+Bunga Pelaminan 10 meter,
+Standing flower untuk Pelaminan,
+Mini Garden,
+Panggung Pelaminan ( jika belum di sediakan di gedung / di rumah)
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Tata Rias dan Busana <br />
+									Rias Pengantin dan 2x Ganti Busana ( termasuk akad nikah),
+Rias dan Busana 2 pasang pendamping ( Orang Tua ),
+Rias dan Busana Penerima Tamu 6 orang,
+Rias dan Busana Among Tamu 8 Pasang
+								</td>
+							</tr>
+							<tr>
+								<td>
+										Foto & Video Shoting <br />
+										2 disc DVD,
+1 Album Colase 10 Sheet,
+Foto Prawedding Outdoor ( Cetak foto 2 bingkai)
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Pelengkap <br />
+									Buku Tamu dan Spidol,
+									Tempat Ampau ( di pinjamkan )
+								</td>
+							</tr>
+							<tr>
+								<td>
+							Bonus <br />
+							MC Resepsi,
+Cucuk Lampah / Lengser,
+50 porsi untuk buffe pengantin,
+Organ tunggal
+						</td>
+					</tr>
+						</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+<section id="decoration">
+			<div><br/><br/>
+				<h2>Decoration <b>Package</b></h2><br/><br/>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3 col-sm-4 col-xs-6">
+					<div id="vcd-box">
+						<img src="images/dekor1.jpg" alt=Img class="img-responsive"></img>
+					</div>
+					<div class="price-list text-center">
+						<h2><c>Harga Paket Gedung</c></h2>
+
+					<div class="list-name text-center">
+						<table class="table table-striped">
+						<tbody>
+							<tr><td>Paket Rp. 9.000.000,-</td></tr>
+							<tr><td>2 kali ganti		Pengantin Termasuk Akad Nikah
+											,4 Orang		Make Up & Sanggul
+											,	2 Orang		Make Up & Sanggul untuk penerima tamu
+											,	2 Pasang		Orang tua Wanita & Pria
+										</td></tr>
+							<tr><td>Dekorasi Ruangan :
+									5 meter		Pelaminan Standar dengan bunga hidup
+								,	4 meter		Mini Garden
+								,	4 unit			Standing Flower
+								,	30 meter		Karpet Jalan
+								,	2 X 6			Panggung Pelaminan
+,	3 X 3			Gazebo Jalan tanpa bunga
+,	1 – 4			Pragola Ranting
+,	100 unit		Kursi Stainless (100 cover)
+,	1 unit			Prasmanan ( Pemanas Besar )
+,	3 unit			Gubugan
+,	2 set			Meja tamu (dengan bunga)
+,	2 unit			Tempat Ampau ( dipinjamkan)
+,	200 set			Piring makan + Sendok + Garpu
+</td></tr>
+					<tr><td>Bonus :
+									5 X 8			Tenda Dekorasi Sisir
+						</tr></td>
+						</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-6">
+					<div id="vcd-box">
+						<img src="images/dekor2.jpg" alt=Img class="img-responsive"></img>
+					</div>
+					<div class="price-list text-center">
+						<h2><c>Harga Paket Gedung</c></h2>
+
+					<div class="list-name text-center">
+						<table class="table table-striped">
+						<tbody>
+							<tr><td>Paket Rp. 10.000.000,-</td></tr>
+							<tr><td>Rincian paket antara lain :
+									2 Kali ganti		Pengantin Termasuk Akad Nikah
+								,	3 Pasang		Make Up & Sanggul untuk among tamu ( pria & wanita)
+								,	4 Orang		Make Up & Sanggul untuk penerima tamu
+								,	2 Pasang		Orang tua Wanita dan Pria
+							</td></tr>
+							<tr><td>Dekorasi Ruangan :
+	6 meter		Pelaminan Standar dengan bunga hidup
+,	100 unit		Kursi Stainless (100 cover)
+,	2 set			Prasmanan
+,	3 unit			Gubugan
+,	2 set			Meja Tamu (dengan bunga)
+,	2 unit			Tempat ampau (di pinjamkan)
+,	300 set			Piring makan + sendok + garpu
+,	 			Karpet jalan
+ </td></tr>
+ <tr><td>Bonus :
+				 5 X 8			Tenda Dekorasi titik
+	 </tr></td>
+						</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-6">
+					<div id="vcd-box">
+						<img src="images/dekor1.jpg" alt=Img class="img-responsive"></img>
+					</div>
+					<div class="price-list text-center">
+						<h2><c>Harga Paket Gedung</c></h2>
+
+					<div class="list-name text-center">
+						<table class="table table-striped">
+						<tbody>
+							<tr><td>Paket Rp. 11.000.000,-</td></tr>
+							<tr><td>Rincian paket antara lain :
+	2 Kali ganti		Pengantin Termasuk Akad Nikah
+,	4 orang		Make Up & Sanggul untuk among tamu
+,	4 orang		Make Up & Sanggul untuk penerima tamu
+,	4 orang		Busana Pria untuk among tamu
+,	2 Pasang		Orang tua Wanita dan Pria
+</td></tr>
+							<tr><td>Dekorasi Ruangan :
+	7 meter		Pelaminan Nasional dengan bunga hidup
+,	80 unit			Kursi Futura Cover
+,	2 set			Prasmanan (Pemanas Besar)
+,	4 unit			Gubugan
+,	2 set			Meja Tamu (dengan bunga)
+,	2 unit			Tempat Ampau ( di pinjamkan)
+,	350 set			Piring makan + sendok + garpu
+,	 			Karpet Jalan
+,	 			Pragola
+</td></tr>
+<tr><td>Bonus :
+				6 X 10			Tenda Dekorasi Titik
+	</tr></td>
+						</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-6">
+					<div id="vcd-box">
+						<img src="images/dekor2.jpg" alt=Img class="img-responsive"></img>
+					</div>
+					<div class="price-list text-center">
+						<h2><c>Harga Paket Gedung</c></h2>
+
+					<div class="list-name text-center">
+						<table class="table table-striped">
+						<tbody>
+							<tr><td>Paket Rp. 13.000.000,-</td></tr>
+							<tr><td>Rincian paket antara lain :
+								2 Kali ganti		Pengantin Termasuk Akad Nikah
+							,	4 Orang			Make Up & Sanggul untuk among tamu ( pria & wanita)
+							,	4 Orang			Make Up & Sanggul untuk penerima tamu
+							,	4 Orang			Busana Pria untuk among tamu
+							,	2 Pasang		Orang tua Wanita dan Pria
+						</td></tr>
+							<tr><td>Dekorasi Ruangan :
+	8 meter			Pelaminan Nasional dengan bunga hidup
+,	120 unit		Kursi Stainless ( 100 cover)
+,	2 set			Prasmanan
+,	4 unit			Gubugan
+,	2 set			Meja tamu (dengan bunga)
+,	2 unit			Tempat amapu (di pinjamkan)
+,	350 set			Piring makan + sendok + garpu
+,	4 unit			Standing Flower di Jalan
+,	3 unit			Standing Flower di Pelaminan
+,	1 unit			Pragola
+,	 			Karpet Jalan
+ </td></tr>
+ 						<tr><td>Bonus :
+	6 X 12			Tenda dekorasi titik
+</tr></td>
+						</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 col-sm-4 col-xs-6">
+					<div id="vcd-box">
+						<img src="images/dekor1.jpg" alt=Img class="img-responsive"></img>
+					</div>
+					<div class="price-list text-center">
+						<h2><c>Harga Paket Gedung</c></h2>
+
+					<div class="list-name text-center">
+						<table class="table table-striped">
+						<tbody>
+							<tr><td>Paket Rp. 16.000.000,-</td></tr>
+							<tr><td>Rincian paket antara lain :
+	3 Kali ganti		Pengantin Termasuk Akad Nikah
+,	2 orang			Make Up & Sanggul untuk among tamu
+,	2 orang			Busana pria untuk among tamu
+,	4 orang			Make Up & Sanggul untuk keluarga
+,	4 Orang			Make Up & Sanggul untuk penerima tamu
+,	2 Pasang			Orang tua Wanita dan Pria
+
+										</td></tr>
+							<tr><td>Dekorasi Ruangan :
+x	8 meter			Pelaminan Nasional dengan bunga hidup
+,	70 + 30 unit (100)	Kursi futura + cover VIP
+,	4 unit			Standing flower
+,	2 unit			Prasmanan
+,	1 set			Meja VIP
+,	4 unit			Gubugan
+,	2 set			Meja tamu (dengan bunga hidup)
+,	2 unit			Tempat ampao (di pinjamkan)
+,	250 set			Piring makan + sendok + garpu
+,	2 unit			Water fan
+,	1 pasang			Umbul-umbul
+,	3 unit			Standing flower di pelaminan
+,	 			Karpet jalan
+,	 			Panggung organ tunggal / panggung pelaminan
+,	 			Pragola
+</td></tr>
+					<tr><td>Bonus :
+									6 X 12			Tenda Dekorasi Titik
+						</tr></td>
+						</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-6">
+					<div id="vcd-box">
+						<img src="images/dekor2.jpg" alt=Img class="img-responsive"></img>
+					</div>
+					<div class="price-list text-center">
+						<h2><c>Harga Paket Gedung</c></h2>
+
+					<div class="list-name text-center">
+						<table class="table table-striped">
+						<tbody>
+							<tr><td>Paket Rp. 19.000.000,-</td></tr>
+							<tr><td>Rincian paket antara lain :
+	3 Kali ganti		Pengantin Termasuk Akad Nikah
+,	2 orang			Make Up & Sanggul untuk among tamu
+,	2 orang			Busana pria untuk among tamu
+,	4 orang			Make Up & Sanggul untuk keluarga
+,	4 Orang			Make Up & Sanggul untuk penerima tamu
+,	2 Pasang			Orang tua Wanita dan Pria
+
+							</td></tr>
+							<tr><td>Dekorasi Ruangan :
+	8 meter			Pelaminan Nasional dengan bunga hidup
+,	70 + 30 unit (100)	Kursi futura + cover VIP
+,	6 unit			Standing flower untuk jalan
+,	2 unit			Prasmanan (pemanas rolltop dengan gazebo)
+,	1 set			Meja VIP + pembatas VIP dan bufee VIP
+,	4 unit			Gubugan
+,	2 set			Meja tamu (dengan bunga hidup)
+,	2 unit			Tempat ampao (di pinjamkan)
+,	350 set			Piring makan + sendok + garpu
+,	2 unit			Water fan
+,	1 pasang			Umbul-umbul
+,	3 unit			Standing flower di pelaminan
+,	 			Karpet jalan
+,	 			Panggung organ tunggal / panggung pelaminan
+,	 			Pragola
+ </td></tr>
+ <tr><td>Bonus :
+				 6 X 12				Tenda Dekorasi titik
+	 </tr></td>
+						</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-6">
+					<div id="vcd-box">
+						<img src="images/dekor1.jpg" alt=Img class="img-responsive"></img>
+					</div>
+					<div class="price-list text-center">
+						<h2><c>Harga Paket Gedung</c></h2>
+
+					<div class="list-name text-center">
+						<table class="table table-striped">
+						<tbody>
+							<tr><td>Paket Rp. 22.000.000,-</td></tr>
+							<tr><td>Rincian paket antara lain :
+	3 Kali ganti		Pengantin Termasuk Akad Nikah
+,	2 orang			Make Up & Sanggul untuk among tamu
+,	2 orang			Busana pria untuk among tamu
+,	4 orang			Make Up & Sanggul untuk keluarga
+,	4 Orang			Make Up & Sanggul untuk penerima tamu
+,	2 Pasang			Orang tua Wanita dan Pria
+</td></tr>
+							<tr><td>Dekorasi Ruangan :
+	9 meter			Pelaminan Nasional dengan bunga hidup
+,	120 unit			Kursi futura + cover VIP
+,	6 unit			Standing flower untuk jalan
+,	5 unit			Standing flower untuk pelaminan
+,	2 unit			Prasmanan (pemanas rolltop dengan gazebo)
+,	1 set			Meja VIP + pembatas VIP dan bufee VIP
+,	4 unit			Gubugan
+,	2 set			Meja tamu (dengan bunga hidup)
+,	2 unit			Tempat ampao (di pinjamkan)
+,	450 set			Piring makan + sendok + garpu
+,	2 unit			Water fan
+,	2 unit 			AC
+,	1 pasang			Umbul-umbul
+,	 			Karpet jalan
+,	 			Panggung organ tunggal / panggung pelaminan
+,	 3 X 3 m			Gazebo jalan
+,	1 unit 			Pragola
+,	 			Dessert dengan inisial
+</td></tr>
+<tr><td>Bonus :
+				8 X 10			Tenda Dekorasi Titik
+	</tr></td>
+						</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-4 col-xs-6">
+					<div id="vcd-box">
+						<img src="images/dekor2.jpg" alt=Img class="img-responsive"></img>
+					</div>
+					<div class="price-list text-center">
+						<h2><c>Harga Paket Gedung</c></h2>
+
+					<div class="list-name text-center">
+						<table class="table table-striped">
+						<tbody>
+							<tr><td>Paket Rp. 25.000.000,-</td></tr>
+							<tr><td>Rincian paket antara lain :
+								2 Kali ganti		Pengantin Termasuk Akad Nikah
+							,	4 Orang			Make Up & Sanggul untuk among tamu ( pria & wanita)
+							,	4 Orang			Make Up & Sanggul untuk penerima tamu
+							,	4 Orang			Busana Pria untuk among tamu
+							,	2 Pasang		Orang tua Wanita dan Pria
+						</td></tr>
+							<tr><td>Dekorasi Ruangan :
+	9 meter			Pelaminan Nasional dengan bunga hidup
+,	120 unit			Kursi futura + cover VIP
+,	6 unit			Standing flower untuk jalan
+,	5 unit			Standing flower untuk pelaminan
+,	2 unit			Prasmanan (pemanas rolltop dengan gazebo)
+,	1 set			Meja VIP + pembatas VIP dan bufee VIP
+,	4 unit			Gubugan
+,	2 set			Meja tamu (dengan bunga hidup)
+,	2 unit			Tempat ampao (di pinjamkan)
+,	450 set			Piring makan + sendok + garpu
+,	2 unit			Water fan
+,	2 unit 			AC
+,	1 pasang			Umbul-umbul
+,	 			Karpet jalan
+,	 			Panggung organ tunggal / panggung pelaminan
+,	 3 X 3 m			Gazebo jalan
+,	1 unit 			Pragola
+,	 			Dessert dengan inisial
+ </td></tr>
+ 						<tr><td>Bonus :
+	8 X 10			Tenda dekorasi titik
+</tr></td>
+						</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+			</div> <!-- end of row-->
+		</div> <!-- end of container -->
+		</section>
+	</div> <!-- end of vcd-pckage -->
+	<div class="vcd-banner">
+		<img src="images/wedding7.jpg" alt="Img" class="img-responsive">
+		<div class="overlay-image"></div>
+		<div class="play-button-container">
+			Decorate Your <b>Wedding</b> Day <br />
+			Decorate Your <b>Future</b> Day
+		</div>
+	</div>
+
+<div class="vcd-gallery">
+	<div class="container text-center">
+			<div><br/><br/>
+				<h2>All <b>Gallery</b></h2><br/><br/>
+			</div>
+		<div class="row">
+			<div class="col-sm-4 col-md-3 col-xs-6 text-center">
+				<img src="images/gallery1.jpg" alt=Img class="img-responsive"></img>
+			</div>
+			<div class="col-sm-4 col-md-3 col-xs-6 text-center">
+				<img src="images/gallery2.jpg" alt=Img class="img-responsive"></img>
+			</div>
+			<div class="col-sm-4 col-md-3 col-xs-6 text-center">
+				<img src="images/gallery1.jpg" alt=Img class="img-responsive"></img>
+			</div>
+			<div class="col-sm-4 col-md-3 col-xs-6 text-center">
+				<img src="images/gallery2.jpg" alt=Img class="img-responsive"></img>
+			</div>
+		</div><br/><!-- end of row-->
+	</div><!-- end of container -->
+</div>
+
+	<div class="vcd-banner">
+		<img src="images/marriage.jpg" alt="Img" class="img-responsive">
+		<div class="overlay-image"></div>
+		<div class="play-button-container">
+			Good <b>Marriage</b> Comes From <br />
+			a Good <b>Wedding</b>
+		</div>
+	</div>
+	<div class="vcd-contact">
+		<div class="container">
+			<div class="col-sm-6 col-md-6 col-xs-12 text-center">
+				<div class="col-sm-6 col-md-6 col-xs-12" style="padding-left: 0px">
+			<p><input class="form-control" type="text" name="nama" placeholder="Nama"></p>
+				</div>
+				<div class="col-sm-6 col-md-6 col-xs-12" style="padding-right: 0px">
+			<p><input class="form-control" type="text" name="email" placeholder="Email"></p>
+				</div>
+			<p><input class="form-control" type="text" name="subject" placeholder="Subject"></p>
+			<p> <textarea class="form-control" rows="3" id="message" placeholder="Message"></textarea></p>
+			<a class="btn btn-sm vcd-btn-primary" href="#" role="button">Submit</a>
+			</div>
+
+			<div class="col-sm-6 col-md-6 col-xs-12 text-center">
+			<div class="vcd-contact-us">
+				<h1>CONTACT <b>US</b></h1>
+			</div>
+			</div>
+		</div>
+	</div>
+
+<div id="vcd-bottom-footer">
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4 text-center">
+			<p>&copy; 2016 Van Catering Decoration All Rights Reserved</p>
+			<p>Developed By <a href="http://dzillaweb.com/">Dzilla Web</a></p>
+		</div>
+		<div class="col-md-4"></div>
+	</div>
+</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
